@@ -1,0 +1,14 @@
+<!-- @dsCard group="Patterns" height=330 page -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Row(t,d,btn){ return h('div',{style:{display:'flex',alignItems:'center',justifyContent:'space-between',gap:24,padding:'14px 0',borderTop:'1px solid var(--line-soft)'}}, h('div',null,h('div',{style:{fontWeight:700,color:'var(--ink-900)'}},t),h('div',{style:{fontSize:12.5,color:'var(--ink-500)'}},d)),btn); }
+function Demo(){ return h(Z.Card,null, h(Z.SectionTitle,null,'امنیت حساب'),
+  Row('رمز عبور','رمز فعلی را وارد کنید و رمز تازه بگذارید. بعد از تغییر، همه‌ی نشست‌ها بسته می‌شوند.',h(Z.Button,{variant:'secondary',icon:h(Z.IconKey,{size:16})},'تغییر رمز عبور')),
+  Row('اعلان‌ها','برای هر موضوع تعیین کنید اعلان در پنل بیاید و پیامک فرستاده شود یا نه.',h(Z.Button,{variant:'secondary',icon:h(Z.IconBell,{size:16})},'تنظیمات اعلان‌ها')),
+  Row('نشست‌ها','اگر فکر می‌کنید کسی دیگر وارد حساب شما شده، از همه‌ی دستگاه‌ها خارج شوید.',h(Z.Button,{variant:'danger',icon:h(Z.IconDevicesOff,{size:16})},'خروج از همه‌ی دستگاه‌ها'))); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

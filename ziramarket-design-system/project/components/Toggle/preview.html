@@ -1,0 +1,10 @@
+<!-- @dsCard group="Forms" height=120 -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Demo(){ const [a,setA]=useState(true),[b,setB]=useState(false); return h('div',{className:'zm-row',style:{gap:28}}, h(Z.Toggle,{checked:a,onChange:setA,label:a?'فعال':'غیرفعال'}), h(Z.Toggle,{checked:b,onChange:setB,label:b?'روشن':'خاموش'}), h(Z.Toggle,{checked:true,onChange:()=>{},disabled:true,label:'غیرفعال (قفل)'})); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

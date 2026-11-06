@@ -1,0 +1,16 @@
+<!-- @dsCard group="Patterns" height=520 page -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Demo(){ const [t,setT]=useState('identity');
+  return h(F,null, h(Z.PageHead,{back:()=>{},actions:h(Z.Button,{icon:h(Z.IconEdit,{size:17})},'ویرایش')}),
+   h(Z.Card,null, h('div',{style:{display:'flex',alignItems:'center',gap:18}}, h(Z.Avatar,{seed:'u-1042',name:'نگار صادقی',size:64}),
+    h('div',null, h('div',{style:{display:'flex',alignItems:'center',gap:10}}, h('h2',{style:{margin:0,fontSize:20}},'نگار صادقی'), h(Z.Badge,{tone:'success'},'فعال'), h(Z.Badge,{tone:'neutral'},'کارمند')),
+     h('div',{style:{display:'flex',gap:18,fontSize:12.5,color:'var(--ink-500)',marginTop:6}}, h('span',null,'کد پرسنلی: ',h('b',{className:'ltr'},'EMP-1042')), h('span',null,'نقش: ',h('b',null,'کارشناس کاتالوگ')))))),
+   h('div',{style:{margin:'18px 0'}}, h(Z.UnderlineTabs,{value:t,onChange:setT,options:[{value:'identity',label:'اطلاعات هویتی'},{value:'contact',label:'آدرس و تماس'},{value:'bank',label:'اطلاعات بانکی'},{value:'job',label:'اطلاعات شغلی'},{value:'docs',label:'مدارک'},{value:'security',label:'امنیت و نقش'}]})),
+   h(Z.Card,null, h(Z.SectionTitle,null,'اطلاعات هویتی'), h('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'22px 28px'}}, h(Z.KeyValue,{label:'نام'},'نگار'),h(Z.KeyValue,{label:'نام خانوادگی'},'صادقی'),h(Z.KeyValue,{label:'کد ملی'},'0012345679'),h(Z.KeyValue,{label:'نام پدر'},null)))); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

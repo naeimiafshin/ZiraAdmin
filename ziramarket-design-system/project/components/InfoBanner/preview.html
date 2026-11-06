@@ -1,0 +1,12 @@
+<!-- @dsCard group="Feedback" height=190 -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Demo(){
+  return h('div',{className:'zm-col'}, h(Z.InfoBanner,null,'فقط سوپرادمین ماتریس مجوزها را تغییر می‌دهد.'), h(Z.InfoBanner,{tone:'warning'},'این نقش غیرفعال است؛ برای تغییر مجوزها اول آن را فعال کنید.'));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

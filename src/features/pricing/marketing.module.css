@@ -1,0 +1,91 @@
+/* بازاریابی (تخفیف‌ساز، کدهای تخفیف، کمپین‌ها) — مطابق html V2 (docs/html-ref/pc-10x-*) */
+.tabsBar { margin: 0 0 16px; }
+.tabsBar [role=tablist] { width: 100%; max-width: 560px; }
+.tabsBar [role=tablist] button { flex: 1; }
+.formCard { margin-bottom: 16px; }
+.cardHead { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+.cardTitle { margin: 0; font-size: 15px; font-weight: 800; color: var(--ink-900); padding-inline-start: 10px; border-inline-start: 3px solid var(--brand); line-height: 1.3; }
+.cardSub { margin: 4px 0 16px; font-size: 12.5px; color: var(--ink-400); }
+.factors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.factor { border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 14px 16px; background: var(--surface); min-width: 0; }
+.factorHead { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
+.factorHead b { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink-900); }
+.num { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--brand); color: #fff; font-size: 11.5px; font-weight: 700; }
+.factorWide { margin-top: 14px; }
+.valueGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-items: end; }
+.formFoot { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line-soft); }
+.kindNote { font-size: 12.5px; color: var(--ink-500); }
+.kindNote b { color: var(--ink-800); }
+.hint { margin: 8px 0 0; font-size: 12px; color: var(--ink-400); }
+.label { margin: 0 0 6px; font-size: 12.5px; color: var(--ink-700); font-weight: 600; }
+.listHead { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.grow { flex: 1; }
+.chipsF { display: inline-flex; gap: 8px; flex-wrap: wrap; }
+.chipF { height: 38px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); font: inherit; font-size: 12.5px; font-weight: 600; color: var(--ink-600); cursor: pointer; }
+.chipF:hover { background: var(--surface-2); }
+.chipF[aria-pressed=true] { border-color: var(--brand); background: var(--blush-50); color: var(--brand); }
+.search { width: 100%; height: 40px; margin: 12px 0 10px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); font: inherit; font-size: 13px; }
+.search:focus { outline: none; box-shadow: var(--focus-ring); border-color: var(--brand); }
+.listSearch { width: 240px; margin: 0; }
+.val { font-weight: 700; color: var(--brand); }
+.perm { font-weight: 700; color: var(--success); }
+.cellClip { display: inline-block; max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; }
+/* انتخاب دامنه */
+.scope { min-width: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; max-width: 100%; padding: 4px 6px 4px 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line-soft); font-size: 12px; font-weight: 600; color: var(--ink-700); }
+.chip small { font-size: 10.5px; font-weight: 500; color: var(--ink-400); }
+.chip button { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; border: 0; background: transparent; color: var(--ink-400); cursor: pointer; }
+.chip button:hover { background: var(--surface-3); color: var(--danger); }
+.pickList { display: flex; flex-direction: column; gap: 4px; max-height: 360px; overflow: auto; }
+.pickRow { display: flex; align-items: center; gap: 10px; width: 100%; padding: 9px 12px; border-radius: 10px; border: 1px solid transparent; background: transparent; font: inherit; font-size: 13px; text-align: start; cursor: pointer; }
+.pickRow:hover { background: var(--surface-2); }
+.pickRowOn { background: var(--blush-50); border-color: var(--brand-tint); }
+.pickRow small { margin-inline-start: auto; color: var(--ink-400); font-size: 11.5px; }
+.pickLabel { font-weight: 600; color: var(--ink-800); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.check { display: inline-grid; place-items: center; flex: none; width: 18px; height: 18px; border-radius: 6px; border: 1.5px solid var(--line-strong); color: #fff; font-size: 12px; font-weight: 700; }
+.pickRowOn .check { background: var(--brand); border-color: var(--brand); }
+.pickEmpty { padding: 24px; text-align: center; color: var(--ink-400); font-size: 13px; }
+/* صفحه‌ی فرم با خلاصه (کد تخفیف جدید، کمپین جدید) */
+.formPage { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 16px; align-items: start; }
+.formPage > div { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.side { position: sticky; top: 76px; display: flex; flex-direction: column; gap: 12px; }
+.sumRow { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line-soft); font-size: 13px; }
+.sumRow span { color: var(--ink-400); }
+.sumRow b { color: var(--ink-900); text-align: end; min-width: 0; overflow-wrap: anywhere; }
+.sumNote { padding: 12px 14px; border-radius: var(--radius); border: 1px solid var(--brand-tint); background: var(--blush-50); font-size: 12.5px; color: var(--brand); line-height: 1.8; }
+.radios { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
+.radios small { display: block; margin-top: 4px; font-size: 11.5px; color: var(--ink-400); line-height: 1.6; }
+.actionsBar { display: flex; gap: 10px; flex-wrap: wrap; }
+.secGap { margin-top: 14px; }
+/* کارت کمپین */
+.campGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.camp { border-radius: 18px; overflow: hidden; background: var(--surface); border: 1px solid var(--line-soft); display: flex; flex-direction: column; }
+.campHead { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; padding: 20px 20px 22px; color: #fff; min-height: 84px; background-size: cover; background-position: center; }
+.campHead small { display: block; font-size: 11.5px; opacity: .9; margin-bottom: 4px; }
+.campHead h3 { margin: 0; font-size: 16px; font-weight: 800; }
+.campHead > span { flex: none; }
+.campPill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: #fff; font-size: 11.5px; font-weight: 700; }
+.campPill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.campBody { padding: 16px 20px 18px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.campDate { display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink-400); flex-wrap: wrap; }
+.dateTag { padding: 1px 8px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line-soft); font-size: 11.5px; color: var(--ink-500); }
+.budget { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--ink-400); }
+.budget b { color: var(--ink-900); }
+.bar { height: 6px; border-radius: 999px; background: var(--surface-3); overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: inherit; background: var(--brand); }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.stat { padding: 12px; border-radius: 12px; border: 1px solid var(--line-soft); }
+.stat b { display: block; font-size: 15px; color: var(--ink-300); }
+.stat span { font-size: 11.5px; color: var(--ink-400); }
+.campFoot { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 4px; }
+.banner { width: 100%; max-height: 160px; object-fit: cover; border-radius: 12px; border: 1px solid var(--line-soft); margin-top: 10px; }
+@media (max-width: 1100px) { .factors, .valueGrid { grid-template-columns: 1fr; } .formPage { grid-template-columns: 1fr; } .side { position: static; } .campGrid { grid-template-columns: 1fr; } }
+.pickFootCount { margin-inline-end: auto; font-size: 12.5px; color: var(--ink-500); max-width: 560px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* کد تخفیف — دامنه: دو بخش محصولات / مشتریان با خط جداکننده (2026-10-24) */
+.scopeSec { padding: 4px 0; }
+.scopeHead { display: flex; align-items: center; gap: 8px; margin: 6px 0 10px; color: var(--ink-800); font-size: 13.5px; }
+.scopeHead svg { color: var(--brand); }
+.scopeRow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; align-items: end; }
+.scopeRow button { width: 100%; height: 42px; justify-content: center; }
+.scopeSep { height: 1px; background: var(--line-soft); margin: 16px 0; }

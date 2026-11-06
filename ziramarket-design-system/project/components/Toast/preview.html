@@ -1,0 +1,11 @@
+<!-- @dsCard group="Feedback" height=170 -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Inner(){ const toast = Z.useToast(); return h('div',{className:'zm-row'}, h(Z.Button,{onClick:()=>toast('نقش کاربر ثبت شد.')},'پیام موفقیت'), h(Z.Button,{variant:'secondary',onClick:()=>toast('به این بخش دسترسی ندارید.','error')},'پیام خطا')); }
+function Demo(){ return h(Z.ToastProvider,null,h(Inner)); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

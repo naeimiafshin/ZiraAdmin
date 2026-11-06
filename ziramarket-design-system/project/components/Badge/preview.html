@@ -1,0 +1,14 @@
+<!-- @dsCard group="Data display" height=120 -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Demo(){
+  return h('div',{className:'zm-row'},
+    h(Z.Badge,{tone:'success'},'فعال'), h(Z.Badge,{tone:'neutral'},'غیرفعال'), h(Z.Badge,{tone:'info'},'در انتظار'),
+    h(Z.Badge,{tone:'warning'},'قفل'), h(Z.Badge,{tone:'danger'},'لغوشده'), h(Z.Badge,{tone:'info'},'سوپرادمین'));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

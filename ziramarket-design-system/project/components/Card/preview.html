@@ -1,0 +1,13 @@
+<!-- @dsCard group="Layout" height=190 -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Demo(){
+  return h(Z.Card,null, h(Z.SectionTitle,null,'اطلاعات بانکی'), h('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'22px 28px'}},
+    h(Z.KeyValue,{label:'نام بانک'},'ملت'), h(Z.KeyValue,{label:'شماره کارت'},Z.formatCard('6104337812345678'))));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

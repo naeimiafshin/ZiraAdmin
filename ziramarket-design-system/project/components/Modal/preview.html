@@ -1,0 +1,12 @@
+<!-- @dsCard group="Overlays" height=360 -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Demo(){ const [o,setO]=useState(true); return h(F,null, h(Z.Button,{variant:'danger',onClick:()=>setO(true)},'خروج از همه‌ی دستگاه‌ها'),
+  h(Z.Modal,{open:o,onClose:()=>setO(false),title:'خروج از همه‌ی دستگاه‌ها',width:460,footer:h(F,null,h(Z.Button,{variant:'danger',icon:h(Z.IconLogout,{size:17})},'خروج از همه'),h(Z.Button,{variant:'ghost',onClick:()=>setO(false)},'انصراف'))},
+    h('p',{style:{fontSize:13,lineHeight:2,color:'var(--ink-700)',margin:0}},'همه‌ی نشست‌های شما در همه‌ی مرورگرها و دستگاه‌ها، از جمله همین‌جا، بسته می‌شود و باید دوباره وارد شوید.'))); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

@@ -1,0 +1,35 @@
+.grid{display:grid;gap:18px 18px}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.label{font-size:12.5px;font-weight:600;color:var(--ink-700)}
+.req{color:var(--brand)}
+.control{height:42px;width:100%;padding:0 14px;border-radius:13px;border:1px solid var(--line);background:var(--surface);font-size:13.5px;color:var(--ink-900);outline:none;transition:border-color .15s,box-shadow .15s}
+.control::placeholder{color:var(--ink-200)}
+.control:hover{border-color:var(--line-strong)}
+.control:focus{border-color:var(--brand);box-shadow:var(--focus-ring)}
+.control:disabled{background:var(--surface-3);color:var(--ink-400);border-color:var(--line-soft);cursor:not-allowed}
+.control:disabled::placeholder{color:var(--ink-300)}
+.invalid{border-color:var(--brand);background:var(--brand-tint-2)}
+.area{height:auto;min-height:96px;padding:12px 14px;line-height:1.8;resize:vertical}
+.selectWrap{position:relative}
+.select{appearance:none;padding-inline-end:36px;cursor:pointer}
+.selectIcon{position:absolute;inset-inline-end:12px;top:50%;transform:translateY(-50%);color:var(--ink-300);pointer-events:none}
+.error{font-size:11.5px;color:var(--brand)}
+.hint{font-size:11.5px;color:var(--ink-400)}
+.toggleRow{display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-700);cursor:pointer}
+.toggle{width:40px;height:22px;border-radius:999px;background:#dcdce2;position:relative;transition:background .15s;flex:none}
+.toggle:disabled{opacity:.5}
+.toggleOn{background:linear-gradient(135deg,#2BA36E,var(--success))}
+.knob{position:absolute;top:2px;right:2px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:right .15s}
+.toggleOn .knob{right:20px}
+.control[readonly]{background:var(--surface-3);color:var(--ink-400);cursor:not-allowed}
+
+/* PickerField — انتخاب از فهرست، هم‌شکل .control */
+.pickWrap{position:relative}
+.pick{display:flex;align-items:center;gap:9px;text-align:start;cursor:pointer;padding-inline-end:58px}
+.pick:disabled{cursor:not-allowed;background:var(--surface-3);border-color:var(--line-soft)}
+.pickIcon{display:flex;color:var(--ink-300);flex:none}
+.pickValue{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.pickEmpty .pickValue{color:var(--ink-200);font-weight:400}
+.pickChev{position:absolute;inset-inline-end:12px;top:50%;transform:translateY(-50%);color:var(--ink-300);pointer-events:none}
+.pickClear{position:absolute;inset-inline-end:34px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink-300);transition:background .15s,color .15s}
+.pickClear:hover{background:var(--surface-3);color:var(--brand)}

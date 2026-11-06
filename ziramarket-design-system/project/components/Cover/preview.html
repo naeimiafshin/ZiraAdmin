@@ -1,0 +1,39 @@
+<!-- @dsCard height=288 -->
+<div class="cv" dir="rtl" lang="fa">
+  <!--
+    blocks: brand 150×250 (radius-card) · logo-wine 110×150 (radius-card) · logo-ink 88×190 (radius-card) · blush-200 110×100 (radius-card) on canvas
+    arrangement: راست‌به‌چپ مثل خود پنل — نام در راست روی زمینه، بلوک‌ها در جعبه‌ی چپ (x ۰ تا ۴۴۰)؛ تخته‌ی برند از بالا بیرون زده و تخته‌ی جوهر از پایین
+    pattern: قرص‌های عمودی مگامنو (پنلی که ۱۵ قرص شیشه‌ای کنار هم دارد و یکی باز است) — شش قرص باریک و یک قرص پهن «باز»، بریده از رنگ زمینه روی تخته‌ی برند
+    scales: گام space-gap-sm (8) و space-grid (18)؛ گردی radius-card (22) برای بلوک‌ها و radius-pill برای قرص‌ها (rx = نصف عرض)
+  -->
+  <svg class="art" viewBox="0 0 440 288" width="440" height="288" aria-hidden="true">
+    <rect class="b-brand r-card" x="40" y="-22" width="150" height="250" />
+    <rect class="b-cut" x="58" y="58" width="14" height="140" rx="7" />
+    <rect class="b-cut" x="80" y="58" width="14" height="140" rx="7" />
+    <rect class="b-cut" x="102" y="58" width="40" height="140" rx="20" />
+    <rect class="b-cut" x="150" y="58" width="14" height="140" rx="7" />
+    <rect class="b-wine r-card" x="208" y="40" width="110" height="150" />
+    <rect class="b-blush r-card" x="208" y="208" width="110" height="100" />
+    <rect class="b-ink r-card" x="336" y="120" width="88" height="190" />
+    <rect class="b-tint" x="226" y="58" width="74" height="14" rx="7" />
+    <rect class="b-tint" x="226" y="80" width="46" height="14" rx="7" />
+  </svg>
+  <div class="txt">
+    <h1 class="name">پنل ادمین<br />زیرا مارکت</h1>
+    <p class="tag">سیستم دیزاین برگرفته از ماژول مدیریت کاربران؛ فارسی، راست‌به‌چپ، دسکتاپ.</p>
+  </div>
+</div>
+<style>
+  .cv { position: relative; width: 960px; height: 288px; background: var(--canvas); overflow: hidden; font-family: var(--font-display); }
+  .art { position: absolute; left: 0; top: 0; }
+  .r-card { rx: 22px; ry: 22px; }
+  .b-brand { fill: var(--brand); }
+  .b-wine { fill: var(--logo-wine); }
+  .b-ink { fill: var(--logo-ink); }
+  .b-blush { fill: var(--blush-200); }
+  .b-cut { fill: var(--canvas); }
+  .b-tint { fill: var(--blush-100); }
+  .txt { position: absolute; right: 40px; bottom: 36px; width: 440px; text-align: right; }
+  .name { margin: 0; font-size: 72px; line-height: .95; font-weight: 800; color: var(--ink-900); letter-spacing: -0.5px; }
+  .tag { margin: 18px 0 0; font-size: 13.5px; line-height: 1.6; color: var(--ink-500); font-family: var(--font-body); }
+</style>

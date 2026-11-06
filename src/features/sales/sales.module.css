@@ -1,0 +1,153 @@
+/* ماژول فروش — فقط توکن‌ها (الگو: supply.module.css)؛ ظاهر از html Fixed «Sales Management» */
+.muted{color:var(--ink-400)}
+.strong{font-weight:700;color:var(--ink-900)}
+.sub{display:block;font-size:11.5px;color:var(--ink-400);margin-top:2px}
+.pre{white-space:pre-wrap;line-height:1.9;margin:0}
+
+/* فهرست */
+.listHead{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.tabCount{font-size:11.5px;color:var(--ink-400)}
+.nameStack{display:inline-flex;flex-direction:column;gap:2px}
+.nameStack b{font-weight:600;color:var(--ink-900)}
+.nameStack small{font-size:11px;color:var(--ink-400)}
+.docNo{font-weight:700;color:var(--info)}
+.docNoVoided{color:var(--ink-400);text-decoration:line-through}
+.draftNo{color:var(--ink-400);font-weight:600}
+.rowMuted{opacity:.62}
+.badges{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
+.rowActions{display:inline-flex;gap:4px;justify-content:center}
+.iconBtn{width:30px;height:30px;display:inline-grid;place-items:center;border-radius:var(--radius-sm);border:1px solid transparent;background:transparent;color:var(--ink-500);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.iconBtn:hover{background:var(--surface-2);color:var(--ink-900);border-color:var(--line)}
+.iconBtn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+.iconBtn:disabled{opacity:.4;cursor:not-allowed}
+.detailBtn{font:inherit;font-size:12px;font-weight:600;height:28px;padding:0 12px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink-700);cursor:pointer}
+.detailBtn:hover{border-color:var(--blush-line);color:var(--brand)}
+.detailBtn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+.sumFoot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding:12px 4px 0;border-top:1px solid var(--line-soft);font-size:12.5px;color:var(--ink-500)}
+.sumFoot b{color:var(--ink-900)}
+
+/* فیلترهای انتخابی (مشتری، کالا) و چندانتخابی (وضعیت تسویه) — هم‌شکل فیلترهای TableFilters */
+.pickChip{position:relative;display:flex;width:100%}
+.pickChipBtn{width:100%;height:40px;display:flex;align-items:center;justify-content:space-between;gap:6px;padding:0 12px;border-radius:10px;border:1px solid var(--field-line);background:var(--field-bg);cursor:pointer;font:inherit;font-size:13px;color:var(--ink-600);white-space:nowrap;transition:border-color .15s,background .15s}
+.pickChipBtn:hover{border-color:var(--blush-line)}
+.pickChipBtn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+.pickChipBtn svg{color:var(--ink-400);flex:none}
+.pickChipBtn b{color:var(--ink-900);font-weight:500;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.pickChipLabel{color:var(--ink-400);font-size:12px}
+.pickChipOn{border-color:var(--blush-line);background:var(--blush-50)}
+.pickChipOn b{color:var(--brand)}
+.pickChipClear{position:absolute;inset-inline-end:8px;top:50%;transform:translateY(-50%);display:flex;padding:4px;border:0;border-radius:7px;color:var(--ink-400);background:var(--surface);cursor:pointer}
+.pickChipClear:hover{color:var(--brand);background:var(--brand-tint)}
+.multiPop{position:absolute;inset-inline-start:0;top:calc(100% + 6px);z-index:30;min-width:100%;padding:6px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow-lg)}
+.multiOpt{display:flex;align-items:center;gap:8px;width:100%;padding:8px 10px;border:0;border-radius:9px;background:transparent;font:inherit;font-size:13px;color:var(--ink-700);cursor:pointer;text-align:start}
+.multiOpt:hover{background:var(--surface-2)}
+.multiOpt input{accent-color:var(--brand)}
+
+/* صفحه‌ی فرم سند (html «فاکتور فروش جدید») */
+.formCard{padding:0!important}
+.formHead{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;border-bottom:1px solid var(--line-soft)}
+.formTitle{display:flex;align-items:center;gap:14px}
+.formMark{width:44px;height:44px;flex:none;border-radius:13px;display:grid;place-items:center;background:var(--brand-tint);color:var(--brand)}
+.formTitle h1{font-size:18px;font-weight:700;color:var(--ink-900);margin:0}
+.formTitle p{margin:4px 0 0;font-size:12.5px;color:var(--ink-500)}
+.formBody{display:flex;flex-direction:column;gap:18px;padding:22px 24px}
+.formCols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:stretch}
+.box{border:1px solid var(--line-soft);border-radius:var(--radius-lg);padding:16px 18px;background:var(--surface)}
+.boxTitle{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 14px;font-size:14px;font-weight:700;color:var(--ink-900)}
+.boxGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px}
+.readonly{height:42px;display:flex;align-items:center;padding:0 14px;border-radius:13px;background:var(--surface-2);border:1px solid var(--line-soft);font-size:13px;color:var(--ink-700)}
+.readonly b{color:var(--info)}
+.custCard{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px;margin-top:12px;padding:12px 14px;border-radius:var(--radius);background:var(--surface-2);font-size:12px;color:var(--ink-500)}
+.custCard b{color:var(--ink-800);font-weight:600}
+.custWide{grid-column:1/-1}
+.formFoot{display:flex;align-items:center;gap:10px;padding:16px 24px;border-top:1px solid var(--line-soft)}
+.formFoot>:first-child{margin-inline-end:auto}
+.formErr{margin:0}
+
+/* جدول ردیف‌های سند (ویرایش و نمایش) */
+.linesWrap{overflow-x:auto;border:1px solid var(--line-soft);border-radius:var(--radius-lg)}
+.lines{width:100%;border-collapse:collapse;font-size:12.5px}
+.lines th{background:var(--surface-2);color:var(--ink-500);font-weight:600;font-size:11.5px;padding:10px 8px;text-align:center;white-space:nowrap;border-bottom:1px solid var(--line-soft)}
+.lines th small{display:block;font-weight:500;font-size:10px;color:var(--ink-400)}
+.lines td{padding:9px 8px;text-align:center;white-space:nowrap;border-bottom:1px solid var(--line-soft);color:var(--ink-800)}
+.lines tbody tr:last-child td{border-bottom:0}
+.lines tfoot td{background:var(--blush-50);font-weight:700;color:var(--ink-900);border-top:1px solid var(--line-soft)}
+.code{color:var(--ink-400);font-size:12px}
+.itemName{display:inline-flex;flex-direction:column;align-items:center;gap:2px}
+.itemName b{font-weight:600;color:var(--ink-900)}
+.itemName small{font-size:11px;color:var(--ink-400)}
+.discount{color:var(--warning)}
+.grand{color:var(--brand)}
+.pending{font-size:11.5px;color:var(--ink-400)}
+.lineErr td{background:var(--danger-tint)}
+.lineErrMsg{display:block;margin-top:4px;font-size:11px;color:var(--danger);white-space:normal}
+.whSelect{min-width:170px}
+.linesEmpty{padding:34px 16px!important}
+.emptyMark{width:46px;height:46px;margin:0 auto 10px;border-radius:13px;display:grid;place-items:center;background:var(--brand-tint);color:var(--brand)}
+.linesEmpty b{display:block;color:var(--ink-900);font-size:13.5px}
+.linesEmpty p{margin:6px 0 0;color:var(--ink-400);font-size:12px}
+
+/* پایین فرم: توضیحات + جمع‌ها */
+.bottom{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:18px;align-items:start}
+.totals{display:flex;flex-direction:column;border:1px solid var(--line-soft);border-radius:var(--radius-lg);overflow:hidden}
+.totRow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 16px;border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-500)}
+.totRow b{color:var(--ink-900)}
+.totGrand{background:var(--ink-900);color:var(--surface);border-bottom:0}
+.totGrand b{color:var(--surface);font-size:17px}
+.totNote{padding:9px 16px;font-size:11.5px;color:var(--ink-400);background:var(--surface-2)}
+
+/* برگه‌ی فاکتور (مودال جزئیات، html «مشاهده فاکتور فروش») */
+.sheet{display:flex;flex-direction:column;gap:18px}
+.draftNote{padding:12px 16px;border-radius:var(--radius);background:var(--info-tint);color:var(--info);font-size:12.5px;line-height:1.9}
+.actsBar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.actsBar>.spacer{margin-inline-end:auto}
+.sheetHead{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:16px;align-items:center;padding-bottom:18px;border-bottom:2px solid var(--ink-900)}
+.brandSide{display:flex;align-items:center;gap:12px}
+.brandSide b{display:block;font-size:17px;color:var(--ink-900)}
+.brandSide small{font-size:12px;color:var(--ink-500)}
+.sheetTitle{text-align:center}
+.sheetTitle h2{margin:0;font-size:19px;color:var(--ink-900)}
+.sheetTitle small{font-size:12px;color:var(--ink-500)}
+.metaTable{justify-self:end;min-width:240px;border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden;font-size:12.5px}
+.metaRow{display:flex;justify-content:space-between;gap:16px;padding:7px 12px;border-bottom:1px solid var(--line-soft)}
+.metaRow:last-child{border-bottom:0}
+.metaRow span{color:var(--ink-500)}
+.metaRow b{color:var(--ink-900)}
+.stamp{position:absolute;inset-inline-end:30%;bottom:-14px;padding:4px 16px;border:2px solid var(--danger);border-radius:10px;color:var(--danger);font-size:17px;font-weight:800;transform:rotate(-12deg);background:var(--surface);opacity:.85}
+.parties{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.party{border:1px solid var(--line-soft);border-radius:var(--radius-lg);overflow:hidden}
+.partyHead{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--blush-50);color:var(--brand);font-weight:700;font-size:13px;border-bottom:1px solid var(--line-soft)}
+.partyBody{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px;padding:12px 14px;font-size:12.5px;color:var(--ink-500)}
+.partyBody b{color:var(--ink-900);font-weight:600}
+.sheetFoot{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:16px;align-items:start}
+.infoBox{display:flex;flex-direction:column;gap:10px;padding:14px 16px;border:1px solid var(--line-soft);border-radius:var(--radius-lg);font-size:12.5px;color:var(--ink-500)}
+.infoBox b{color:var(--ink-900)}
+.infoGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px;padding-top:10px;border-top:1px dashed var(--line)}
+.words{padding-bottom:4px}
+.section{display:flex;flex-direction:column;gap:10px}
+.subTable{width:100%;border-collapse:collapse;font-size:12.5px;border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden}
+.subTable th{background:var(--surface-2);color:var(--ink-500);font-weight:600;font-size:11.5px;padding:9px 8px;text-align:center;white-space:nowrap}
+.subTable td{padding:9px 8px;text-align:center;white-space:nowrap;border-top:1px solid var(--line-soft)}
+.linkBtn{font:inherit;font-size:12.5px;color:var(--info);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.linkBtn:hover{color:var(--ink-900)}
+.linkBtn:focus-visible{outline:none;box-shadow:var(--focus-ring);border-radius:4px}
+.alertLine{margin:0}
+
+/* مودال تسویه */
+.settleHead{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.settleStat{display:flex;flex-direction:column;gap:4px;padding:12px 14px;border:1px solid var(--line-soft);border-radius:var(--radius);background:var(--surface-2)}
+.settleStat small{font-size:11.5px;color:var(--ink-400)}
+.settleStat b{font-size:16px;color:var(--ink-900)}
+.settleOut b{color:var(--brand)}
+.settleForm{display:flex;flex-direction:column;gap:14px;padding:16px;border:1px solid var(--blush-line);border-radius:var(--radius-lg);background:var(--blush-50)}
+.settleGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 16px;align-items:start}
+.settleFoot{display:flex;align-items:center;justify-content:flex-end;gap:10px}
+.steps{display:inline-flex;align-items:center;gap:6px}
+.step{display:inline-flex;align-items:center;gap:4px;height:26px;padding:0 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font:inherit;font-size:11.5px;color:var(--ink-500);cursor:pointer}
+.step:disabled{cursor:not-allowed;opacity:.55}
+.stepDone{border-color:transparent;background:var(--success-tint);color:var(--success);cursor:default;opacity:1!important}
+.stepNext{border-color:var(--brand);color:var(--brand)}
+.cancelled td{color:var(--ink-400)}
+.qtyBox{width:54px;height:30px;border:1px solid var(--line);border-radius:9px;text-align:center;font:inherit;font-size:12.5px;background:var(--surface);color:var(--ink-900)}
+.qtyBox:focus{outline:none;border-color:var(--brand);box-shadow:var(--focus-ring)}
+.modalStack{display:flex;flex-direction:column;gap:12px}

@@ -1,0 +1,7 @@
+.wrap{display:inline-flex;align-items:center;gap:6px;flex:none}
+.btn{width:32px;height:32px;border-radius:10px;border:1px solid var(--line);background:var(--surface);display:flex;align-items:center;justify-content:center;color:var(--ink-600);transition:border-color .15s,color .15s}
+.btn:hover:not(:disabled){border-color:var(--blush-line);color:var(--brand)}
+.btn:disabled{opacity:.4;cursor:default}
+.val{width:52px;height:32px;border-radius:10px;border:1px solid var(--line-soft);background:var(--surface-3);text-align:center;font-weight:700;font-size:14px;color:var(--ink-900);outline:none}
+.val:focus{border-color:var(--brand);background:var(--surface)}
+.unit{font-size:12px;color:var(--ink-400);min-width:48px;text-align:start;white-space:nowrap}

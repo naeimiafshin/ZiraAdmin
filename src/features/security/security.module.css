@@ -1,0 +1,54 @@
+.head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px;min-height:44px}
+.title{font-size:20px;font-weight:700}
+.chips{display:flex;gap:8px;margin:-4px 0 12px;flex-wrap:wrap}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start;margin-bottom:18px}
+.lead{font-size:12.5px;color:var(--ink-400);margin:-10px 0 14px;line-height:1.8}
+.field{margin:6px 0 18px}
+.modalBody{display:flex;flex-direction:column;gap:16px}
+.wide{margin-bottom:18px}
+.cardHead{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:6px;border-bottom:1px solid var(--line-soft)}
+.cardIcon{width:42px;height:42px;border-radius:13px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--brand-tint);color:var(--brand)}
+.cardTitle{font-size:15px;font-weight:700;color:var(--ink-900)}
+.cardDesc{font-size:12px;color:var(--ink-400);margin-top:2px}
+.cardBody{display:flex;flex-direction:column}
+.setting{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.setting:last-child{border-bottom:none}
+.settingText{display:flex;flex-direction:column;min-width:0}
+.settingTitle{font-size:13.5px;font-weight:700;color:var(--ink-900)}
+.settingDesc{font-size:11.5px;color:var(--ink-400);margin-top:2px}
+.subBox{background:var(--surface-2);border-radius:14px;padding:0 14px;margin:10px -14px}
+.subBox .setting{padding:10px 0}
+.checks{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.check{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 12px;border-radius:11px;border:1px solid var(--line);font-size:12.5px;font-weight:600;color:var(--ink-600);cursor:pointer;background:var(--surface)}
+.check input{width:16px;height:16px;accent-color:var(--success)}
+.checkOn{border-color:#bfe3cf;background:var(--success-tint);color:var(--success)}
+.ipMode{display:flex;align-items:center;gap:14px;padding:12px 0}
+.ipAdd{display:flex;gap:10px;margin:6px 0 12px}
+.ipBtn{flex:none}
+.ipInput{flex:1;min-width:0;height:42px;border-radius:13px;border:1px solid var(--line);background:var(--surface-3);padding:0 14px;font-size:13.5px;outline:none}
+.ipInput:focus{border-color:var(--brand);background:var(--surface);box-shadow:var(--focus-ring)}
+.ipList{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.ipChip{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 10px 0 12px;border-radius:10px;border:1px solid var(--line);font-size:12.5px;font-weight:700;background:var(--surface)}
+.ipChip button{width:22px;height:22px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--brand)}
+.ipChip button:hover{background:var(--brand-tint)}
+.saveBar{display:flex;align-items:center;gap:16px;padding:16px 20px}
+.settingCol{flex-direction:column;align-items:stretch;gap:10px}
+.settingCol .checks{justify-content:flex-start}
+.stretch{align-items:stretch}
+.stretch>*{height:100%}
+.full{height:100%}
+.pill{display:inline-flex}
+.pill>*{min-width:76px;justify-content:center}
+.pillBtn{min-width:76px}
+.detailGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 24px}
+
+/* تاریخ + ساعت در یک ستون، یک خط */
+.when{display:inline-flex;gap:8px;white-space:nowrap}
+/* جدول ۱۱ستونه‌ی نشست‌ها با زیرمنوی باز در عرض صفحه جا شود: فاصله‌ی داخلی سلول‌ها کمی کمتر (افشین 2026-10-25) */
+.sessionsCard table th,.sessionsCard table td{padding-inline:11px}
+
+/* عملیات ردیف تنظیم اختصاصی (ویرایش + بازگشت به پیش‌فرض؛ 2026-10-25) */
+.rowActs{display:inline-flex;align-items:center;gap:6px}
+/* کارت ورود دو مرحله‌ای: توضیح زیر سربرگ و نقش‌ها از راست (2026-10-25) */
+.note{font-size:12.5px;color:var(--ink-400);line-height:1.9;margin:0 0 14px}
+.roleChecks{justify-content:flex-start}

@@ -1,0 +1,2 @@
+.wrap{display:inline-flex}
+.spinner{display:inline-block;border-radius:50%;border:2px solid currentColor;border-inline-end-color:transparent;animation:spin .7s linear infinite;opacity:.9}

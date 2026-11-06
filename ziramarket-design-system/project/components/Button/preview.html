@@ -1,0 +1,23 @@
+<!-- @dsCard group="Actions" height=230 -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Demo(){
+  return h('div',{className:'zm-col'},
+    h('div',{className:'zm-row'},
+      h(Z.Button,{icon:h(Z.IconPlus,{size:17})},'افزودن کاربر جدید'),
+      h(Z.Button,{variant:'secondary',icon:h(Z.IconEdit,{size:17})},'ویرایش'),
+      h(Z.Button,{variant:'ghost'},'انصراف'),
+      h(Z.Button,{variant:'danger',icon:h(Z.IconTrash,{size:16})},'حذف')),
+    h('div',{className:'zm-row'},
+      h(Z.Button,{loading:true,loadingText:'در حال ذخیره…'},'ذخیره'),
+      h(Z.Button,{disabled:true,'data-tip':'ابتدا یک کاربر انتخاب کنید'},'تخصیص نقش'),
+      h(Z.Button,{size:'sm',variant:'secondary',icon:h(Z.IconUsersPlus,{size:15})},'افزودن گروهی کاربران'),
+      h(Z.Button,{size:'sm',variant:'danger'},'اتمام')),
+    h('div',{style:{maxWidth:320}},h(Z.Button,{size:'lg',block:true},'ورود به پنل')));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

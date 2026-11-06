@@ -1,0 +1,14 @@
+<!-- @dsCard group="Forms" height=290 -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Demo(){ const [m,setM]=useState('۰۹۱۲۳۴۵'); return h(Z.Card,null, h(Z.FormGrid,{cols:2},
+  h(Z.Input,{label:'نام کاربری',required:true,latin:true,dir:'ltr',defaultValue:'n.sadeghi'}),
+  h(Z.Input,{label:'موبایل شخصی ۱',required:true,dir:'ltr',inputMode:'numeric',defaultValue:m,format:Z.formatMobileInput,onChange:(e)=>setM(e.target.value),error:Z.mobileProblem(m)||undefined}),
+  h(Z.Input,{label:'شماره شبا',dir:'ltr',defaultValue:Z.formatIban('IR820540102680020817909002'),hint:'«IR» و ۲۴ رقم'}),
+  h(Z.Input,{label:'موبایل ورود',disabled:true,dir:'ltr',defaultValue:'۰۹۱۲۱۲۳۴۵۶۷',hint:'از این فرم قابل تغییر نیست.'}))); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

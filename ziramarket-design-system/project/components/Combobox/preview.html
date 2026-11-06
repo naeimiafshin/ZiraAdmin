@@ -1,0 +1,10 @@
+<!-- @dsCard group="Forms" height=230 -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Demo(){ const [v,setV]=useState(''); return h('div',{style:{maxWidth:300}}, h(Z.Field,{label:'عنوان شغلی'}, h(Z.Combobox,{value:v,onChange:setV,options:['کارشناس فروش','کارشناس انبار','مدیر شعبه','حسابدار'],placeholder:'بنویسید یا انتخاب کنید'}))); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

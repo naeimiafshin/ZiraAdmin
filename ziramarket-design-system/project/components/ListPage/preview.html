@@ -1,0 +1,30 @@
+<!-- @dsCard group="Patterns" height=560 page -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+const ROWS = [
+  {id:'1',code:'EMP-1042',first:'نگار',last:'صادقی',mobile:'09123960641',role:'کارشناس کاتالوگ',status:'ACTIVE',sess:2},
+  {id:'2',code:'EMP-1043',first:'رضا',last:'نوری',mobile:'09129990002',role:null,status:'ACTIVE',sess:0},
+  {id:'3',code:'EMP-1051',first:'لیلا',last:'احمدی',mobile:'09129990003',role:'مدیر شعبه',status:'BLOCKED',sess:0},
+  {id:'4',code:'EMP-1060',first:'کاوه',last:'رحیمی',mobile:'09129990004',role:null,status:'SUSPENDED',sess:0},
+];
+const ST = {ACTIVE:{label:'فعال',tone:'success'},SUSPENDED:{label:'غیرفعال',tone:'neutral'},BLOCKED:{label:'قفل',tone:'warning'}};
+const COLS = [
+  {key:'i',header:'ردیف',render:(_,i)=>h('span',{style:{color:'var(--ink-400)'}},Z.faNum(i+1))},
+  {key:'code',header:'کد پرسنلی',code:true,render:(r)=>h('span',{className:'ltr'},r.code)},
+  {key:'first',header:'نام',render:(r)=>h('b',null,r.first)},
+  {key:'last',header:'نام خانوادگی',render:(r)=>h('b',null,r.last)},
+  {key:'mobile',header:'موبایل',render:(r)=>h('span',{className:'tnum'},r.mobile)},
+  {key:'role',header:'نقش',render:(r)=>r.role?h(Z.Chip,null,r.role):h('span',{style:{color:'var(--ink-400)'}},'بدون نقش')},
+  {key:'status',header:'وضعیت',render:(r)=>h(Z.Badge,{tone:ST[r.status].tone},ST[r.status].label)},
+  {key:'sess',header:'نشست فعال',render:(r)=>h('span',{className:'tnum'},Z.faNum(r.sess))},
+];
+function Demo(){ const [q,setQ]=useState(''),[s,setS]=useState(''),[p,setP]=useState(1);
+  return h(F,null, h(Z.PageHead,{actions:h(Z.Button,{icon:h(Z.IconPlus,{size:17})},'افزودن کاربر جدید')}),
+   h(Z.Card,null, h(Z.TableFilters,{search:q,onSearch:setQ,placeholder:'جست‌وجو: نام، نام کاربری، موبایل یا کد پرسنلی',count:'۴ کاربر',filters:[{key:'s',label:'وضعیت',value:s,onChange:setS,options:[{value:'ACTIVE',label:'فعال'},{value:'SUSPENDED',label:'غیرفعال'}]}]}),
+    h(Z.DataTable,{columns:COLS,rows:ROWS,rowKey:(r)=>r.id,onRowClick:()=>{}}), h(Z.Pagination,{page:p,pageSize:10,total:4,onPage:setP}))); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

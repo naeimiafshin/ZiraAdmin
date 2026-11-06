@@ -1,0 +1,15 @@
+20 binary files could not be exported by the artifact tools and are not in this ZIP:
+
+- project/fonts/Vazirmatn-Arabic-Variable.woff2
+- project/fonts/Vazirmatn-Latin-Variable.woff2
+  (Vazirmatn is open source, OFL: https://github.com/rastikerdar/vazirmatn/releases)
+
+- 18 WebP images (Screens / Backgrounds) stored as artifact assets:
+  6b954d9371f3578a657d8206a9c69c0c, 32bc0d07c04389ca0a28031d808c384a, f28a9c6659f6ab3553f658dfb31555fd,
+  bd582e7c6836c9528f82f519c9955a44, ce29150425bfd7ab59ef79b294ff07db, f7460b9c4536b8ac126dfcd563f616ef,
+  4b42879bcfac7e90e5c30732d1127a27, 42cf4930aed7b1fc36bfdcbb549814b1, 2f2cb350e7bdd33d6cf69cfc2eff19a5,
+  24730487e649ce078ef4039bea225993, fa2ee5e22478c9d5da843d67234322b1, 70fbd8cfa7e24122f5628b72225c311f,
+  c897bde88b8128b5b50687df672c2b8d, b1296eae1a809aeffe09b12c98e7fe67, 25c1c098db3caaa5b73f12c6f57a6ff7,
+  1c606698b9c6b12bff71718a7a810f37, 2d010cf8686d53c6c1b5801f338cbd4d, 219c3ca13d551b997f33438cbd6f571d
+
+Every included file was verified against the artifact's sha256 checksums (SHA256SUMS.txt).

@@ -1,0 +1,122 @@
+/* سایدبار با عرض ثابت: قاب سفید ⇐ نوار ماژول‌ها (راست) + قاب خاکستری زیرمنو با کارت سفید داخلی (طرح «1») */
+.side{--inner:312px;--rail:52px;--gap:8px;--ease:cubic-bezier(.32,.72,.24,1);
+  width:calc(var(--inner) + 22px);flex:none;position:sticky;top:16px;height:calc(100vh - 32px);display:flex;padding:10px;
+  background:var(--surface);border-radius:28px;border:1px solid var(--frame-line);box-shadow:var(--shadow-frame);z-index:30;overflow:hidden}
+
+/* ── کشوی منوی اصلی ── */
+.rail{width:var(--rail);flex:none;display:flex;flex-direction:column;gap:4px;overflow:hidden;transition:width .34s var(--ease)}
+.sideMain .rail{width:var(--inner)}
+.railHead{display:flex;align-items:center;gap:12px;padding:0 6px;height:48px;margin-bottom:2px;flex:none}
+.logoTile{width:40px;height:40px;border-radius:13px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--brand-gradient);box-shadow:var(--shadow-brand)}
+.logoTile img{filter:brightness(0) invert(1)}
+.railTitle{font-size:15px;font-weight:700;color:var(--ink-900);white-space:nowrap;opacity:0;transition:opacity .2s}
+.sideMain .railTitle{opacity:1;transition-delay:.12s}
+
+.railList{display:flex;flex-direction:column;gap:2px;flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:none}
+.railList::-webkit-scrollbar{display:none}
+.railBottom{display:flex;flex-direction:column;padding-top:6px;margin-top:4px;border-top:1px dashed var(--line);flex:none}
+
+.railBtn,.drawerBtn{width:100%;overflow:hidden;height:46px;flex:none;display:flex;align-items:center;gap:12px;padding:0 6px;border-radius:14px;text-align:start;color:var(--ink-400);transition:background .16s,color .16s}
+.railIcon{width:40px;height:40px;border-radius:13px;flex:none;display:flex;align-items:center;justify-content:center;transition:background .16s,color .16s,box-shadow .16s}
+.railText{display:flex;flex-direction:column;min-width:0;white-space:nowrap;opacity:0;transform:translateX(8px);transition:opacity .18s,transform .25s var(--ease)}
+.sideMain .railText{opacity:1;transform:none;transition-delay:.1s}
+.railName{font-size:13.5px;font-weight:700;color:var(--ink-800);line-height:1.5}
+.railSub{font-size:11px;color:var(--ink-400);line-height:1.4}
+.railBtn:hover .railIcon{background:var(--surface-3);color:var(--ink-900)}
+.sideMain .railBtn:hover{background:var(--surface-2)}
+.railOn .railIcon,.railOn:hover .railIcon{background:var(--brand-tint);color:var(--brand)}
+.sideMain .railOn,.sideMain .railOn:hover{background:var(--brand-tint)}
+.sideMain .railOn .railIcon{background:var(--surface);box-shadow:0 4px 12px rgba(215,78,84,.16)}
+.sideMain .railOn .railName{color:var(--brand)}
+.railOff .railIcon{color:var(--line-strong)}
+.railOff .railName{color:var(--ink-300)}
+
+.drawerBtn{margin-bottom:4px}
+.drawerBtn .railIcon{background:var(--blush-50);border:1px dashed var(--blush-line);color:var(--logo-wine)}
+.drawerBtn:hover .railIcon{background:var(--brand-tint);border-style:solid;color:var(--brand)}
+.drawerLabel{font-size:12.5px;font-weight:600;color:var(--ink-500)}
+
+/* ── کشوی زیرمنو ── */
+.panel{width:calc(var(--inner) - var(--rail) - var(--gap));margin-inline-start:var(--gap);flex:none;display:flex;padding:8px;border-radius:22px;background:var(--panel-frame);overflow:hidden;transition:width .34s var(--ease),margin .34s var(--ease),padding .34s var(--ease),opacity .25s}
+.sideMain .panel{width:0;margin-inline-start:0;padding-inline:0;opacity:0}
+.panelCard{width:calc(var(--inner) - var(--rail) - var(--gap) - 16px);flex:none;display:flex;flex-direction:column;background:var(--surface);border-radius:18px;box-shadow:0 1px 2px rgba(109,47,50,.04);overflow:hidden}
+.moduleHead{display:flex;align-items:center;gap:11px;padding:12px 10px;text-align:start;border-radius:16px;margin:6px;transition:background .14s;min-height:64px}
+.moduleHead:hover{background:var(--blush-50)}
+.moduleTile{width:40px;height:40px;border-radius:13px;flex:none;display:flex;align-items:center;justify-content:center;color:var(--brand);background:var(--brand-tint)}
+.moduleText{display:flex;flex-direction:column;flex:1;min-width:0}
+.moduleName{font-size:14.5px;font-weight:700;color:var(--ink-900)}
+.moduleSub{font-size:11.5px;color:var(--ink-400);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.moduleGrid{color:var(--ink-300);flex:none;transition:color .14s}
+.moduleHead:hover .moduleGrid{color:var(--brand)}
+.panelNav{flex:1;overflow-y:auto;padding:0 10px 14px}
+.section{margin-top:10px}
+.sectionTitle{font-size:11.5px;font-weight:600;color:var(--ink-300);padding:6px 12px}
+.item{display:flex;align-items:center;gap:11px;padding:11px 14px;border-radius:14px;font-size:13.5px;font-weight:600;color:var(--ink-600);transition:background .14s,color .14s;margin-bottom:2px}
+.item:hover{background:var(--surface-3);color:var(--ink-900)}
+.item svg{flex:none;color:var(--ink-400)}
+.itemOn,.itemOn:hover{background:var(--brand-tint);color:var(--brand)}
+.itemSoon,.itemSoon:hover{background:none;color:var(--ink-300);cursor:not-allowed}
+.itemSoon .soon{margin-inline-start:auto}
+.itemSub{padding-inline-start:26px;font-size:12.5px;font-weight:500;color:var(--ink-500)}
+.subMark{color:var(--ink-300);font-size:11px;margin-inline-end:-4px}
+.itemOn svg{color:var(--brand)}
+.skel{height:42px;border-radius:14px;margin:6px 0;background:linear-gradient(90deg,#f3eff0 0%,#faf7f8 40%,#f3eff0 80%);background-size:600px 100%;animation:shimmer 1.3s infinite linear}
+.state{padding:18px 10px;font-size:12.5px;color:var(--ink-400);display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.link{color:var(--brand);font-weight:700}
+
+/* ── مگامنو ── */
+.megaOverlay{position:fixed;inset:0;z-index:80;background:rgba(42,30,34,.30);backdrop-filter:blur(3px);display:flex;justify-content:flex-start;padding:16px;padding-inline-start:366px;animation:fadeIn .15s ease}
+.mega{flex:1;max-width:1080px;height:100%;background:var(--canvas);border-radius:28px;display:flex;flex-direction:column;box-shadow:var(--shadow-lg);overflow:hidden;animation:megaIn .22s ease}
+@keyframes megaIn{from{transform:translateX(24px);opacity:.4}to{transform:translateX(0);opacity:1}}
+.megaHead{display:flex;align-items:center;gap:14px;padding:20px 26px;background:var(--surface);border-bottom:1px solid var(--line-soft)}
+.megaHeadIcon{width:42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:var(--brand-gradient);color:#fff;box-shadow:var(--shadow-brand);flex:none}
+.megaTitle{font-size:18px;font-weight:700}
+.megaSub{font-size:12.5px;color:var(--ink-400);margin-top:2px}
+.megaSearch{flex:1;max-width:380px;margin-inline-start:auto;height:42px;display:flex;align-items:center;gap:8px;padding:0 14px;border-radius:13px;background:var(--surface-3);color:var(--ink-300);border:1px solid transparent}
+.megaSearch:focus-within{border-color:var(--brand);background:var(--surface);color:var(--brand)}
+.megaSearch input{flex:1;border:none;outline:none;background:transparent;font-size:13.5px;color:var(--ink-900)}
+.megaSearch input:focus-visible{box-shadow:none}
+.megaX{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;color:var(--ink-400)}
+.megaX:hover{background:var(--surface-3)}
+.megaGrid{flex:1;overflow:auto;padding:22px 26px;columns:3;column-gap:14px}
+.megaCard{background:var(--surface);border:1px solid var(--line-soft);border-radius:20px;padding:14px;display:flex;flex-direction:column;gap:6px;break-inside:avoid;margin-bottom:14px;transition:border-color .15s,box-shadow .15s}
+.megaCard:hover{border-color:var(--blush-line);box-shadow:0 10px 26px rgba(109,47,50,.07)}
+.megaCardOn{border-color:#f0c9cb;box-shadow:0 0 0 3px rgba(215,78,84,.08)}
+.megaCardOff{opacity:.6}
+.megaCardHead{display:flex;align-items:center;gap:10px;padding:4px;border-radius:12px;text-align:start}
+.megaCardHead:hover:not(:disabled){background:var(--surface-3)}
+.megaCardHead:disabled{cursor:default}
+.megaIcon{width:36px;height:36px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:var(--brand-tint);color:var(--brand);flex:none}
+.megaCardName{flex:1;font-size:14px;font-weight:700;color:var(--ink-900)}
+.soon{font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--surface-3);color:var(--ink-400)}
+.megaItems{list-style:none;display:flex;flex-direction:column;padding-inline-start:46px}
+.megaItems button{width:100%;text-align:start;padding:6px 8px;border-radius:9px;font-size:12.5px;color:var(--ink-600)}
+.megaItems button:hover{background:var(--brand-tint);color:var(--brand)}
+.megaFoot{padding:12px 26px;font-size:11.5px;color:var(--ink-400);border-top:1px solid var(--line-soft);background:var(--surface)}
+.megaFoot kbd{font-family:inherit;padding:1px 6px;border:1px solid var(--line);border-radius:6px;background:var(--surface-3)}
+.count{margin-inline-start:auto;min-width:22px;height:22px;padding:0 7px;border-radius:999px;background:var(--brand-gradient);color:#fff;font-size:11.5px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(215,78,84,.28)}
+.railIcon{position:relative}
+.railDot{position:absolute;top:6px;inset-inline-end:6px;width:9px;height:9px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 2px var(--surface)}
+
+/* ── منوی اصلی: هر ماژول در یک کادر برجسته (افشین 2026-10-21) ── */
+.railList{gap:8px;padding:6px 5px 12px;margin-inline:-5px}
+.railBottom{padding:10px 5px 4px;margin-inline:-5px}
+.railBtn{height:48px;padding:0 3px;background:var(--surface);border:1px solid var(--line-soft);border-radius:15px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 1px 2px rgba(42,30,34,.06),0 4px 10px -2px rgba(42,30,34,.09);
+  transition:box-shadow .2s,transform .2s,border-color .2s,background .2s,color .16s}
+.railBtn .railIcon,.railBtn:hover .railIcon{background:transparent;width:40px;height:40px}
+.railBtn:hover,.sideMain .railBtn:hover{background:var(--surface);transform:translateY(-1px);border-color:var(--line);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 2px 4px rgba(42,30,34,.07),0 8px 18px -4px rgba(42,30,34,.14)}
+.railBtn:hover .railIcon{color:var(--ink-900)}
+.railBtn:active{transform:translateY(0)}
+/* گزینه‌ی انتخاب‌شده: همان سایه‌ی برجستگی، قرمز */
+.railOn,.railOn:hover,.sideMain .railOn,.sideMain .railOn:hover{background:var(--surface);border-color:rgba(215,78,84,.35);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 2px 4px rgba(215,78,84,.18),0 8px 18px -4px rgba(215,78,84,.42)}
+.railOn .railIcon,.railOn:hover .railIcon,.sideMain .railOn .railIcon{background:transparent;box-shadow:none;color:var(--brand)}
+.railOff{background:var(--surface-2);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 1px 2px rgba(42,30,34,.04)}
+.railOff:hover{transform:none}
+.railDot{top:5px;inset-inline-end:5px}
+
+/* رنگ دانه‌ی زیره در آیکون‌های اختصاصی (افشین 2026-11-04): عادی = برند، فعال و کاشی ماژول = شرابی لوگو، خاموش = همان رنگ خاکستری آیکون */
+.railOn .railIcon,.moduleTile{--nav-seed:var(--logo-wine)}
+.railOff .railIcon{--nav-seed:currentColor}

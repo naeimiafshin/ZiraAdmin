@@ -1,0 +1,346 @@
+/* محصولات و کاتالوگ — فقط توکن‌های tokens.css؛ جدول‌ها با DataTable (RULES ۴) */
+.muted { color: var(--ink-400); }
+.strong { font-weight: 700; color: var(--ink-900); }
+.sub { font-size: 12px; color: var(--ink-400); margin-top: 2px; }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.rowActions { display: inline-flex; gap: 4px; justify-content: center; }
+.iconBtn {
+  width: 30px; height: 30px; display: inline-grid; place-items: center; border-radius: var(--radius-sm);
+  border: 1px solid transparent; background: transparent; color: var(--ink-500); cursor: pointer;
+}
+.iconBtn:hover { background: var(--surface-2); color: var(--ink-900); border-color: var(--line); }
+.iconBtn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.iconBtn:disabled { opacity: .4; cursor: not-allowed; }
+.iconDanger:hover { background: var(--danger-tint); color: var(--danger); border-color: transparent; }
+.brandCell { display: inline-flex; align-items: center; gap: 10px; text-align: right; }
+.brandLogo { width: 30px; height: 30px; border-radius: 8px; object-fit: contain; background: var(--surface-2); border: 1px solid var(--line-soft); }
+.brandMark { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; font-weight: 700; color: var(--brand); background: var(--brand-tint); }
+.logoRow { display: flex; align-items: center; gap: 10px; }
+.logoPreview { width: 56px; height: 56px; border-radius: 10px; object-fit: contain; background: var(--surface); border: 1px solid var(--line-soft); }
+.logoEmpty { width: 56px; height: 56px; border-radius: 10px; display: grid; place-items: center; color: var(--ink-400); background: var(--surface-2); border: 1px dashed var(--line); }
+.latin { font-size: 12px; color: var(--ink-400); direction: ltr; display: block; }
+.segRow { display: flex; flex-direction: column; gap: 6px; }
+.segLabel { font-size: 12.5px; color: var(--ink-600); font-weight: 600; }
+.formErr { margin-bottom: 10px; }
+.inlineForm { display: grid; gap: 12px; align-items: end; }
+.inlineForm > :last-child { padding-bottom: 0; }
+
+/* ── دسته‌بندی‌ها (سه ستون سطحی مثل html Fixed) ── */
+.catStats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.catStat { padding: 12px 14px; border: 1px solid var(--line-soft); border-radius: var(--radius); background: var(--surface); }
+.catStatLabel { font-size: 12px; color: var(--ink-400); }
+.catStatValue { font-size: 22px; font-weight: 800; color: var(--ink-900); margin-top: 2px; }
+.catStatPath { font-size: 13px; font-weight: 700; color: var(--brand); margin-top: 8px; }
+.cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.col { border: 1px solid var(--line-soft); border-radius: var(--radius); background: var(--surface); min-height: 260px; display: flex; flex-direction: column; }
+.colHead { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid var(--line-soft); font-weight: 700; color: var(--ink-800); }
+.colBody { padding: 8px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.colEmpty { color: var(--ink-400); font-size: 13px; text-align: center; padding: 36px 12px; }
+.node {
+  display: flex; align-items: center; gap: 8px; width: 100%; text-align: right; padding: 8px 10px; border-radius: var(--radius-sm);
+  border: 1px solid var(--line-soft); background: var(--surface); cursor: pointer; color: var(--ink-800);
+}
+.node:hover { border-color: var(--line); background: var(--surface-2); }
+.nodeOn { border-color: var(--blush-line); background: var(--blush-50); color: var(--brand); }
+.nodeOff { opacity: .6; }
+.nodeMain { flex: 1; min-width: 0; }
+.nodeName { font-weight: 700; font-size: 13.5px; }
+.nodeMeta { font-size: 11.5px; color: var(--ink-400); margin-top: 2px; display: flex; gap: 6px; align-items: center; }
+.nodeActs { display: inline-flex; gap: 2px; opacity: 0; transition: opacity .12s; }
+.node:hover .nodeActs, .node:focus-within .nodeActs, .nodeOn .nodeActs { opacity: 1; }
+.results { display: flex; flex-direction: column; gap: 6px; }
+.resultRow { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--surface); cursor: pointer; text-align: right; }
+.resultRow:hover { background: var(--surface-2); }
+.resultPath { font-size: 12px; color: var(--ink-400); flex: 1; }
+.renameRow { display: flex; gap: 6px; align-items: center; width: 100%; }
+.renameRow input { flex: 1; height: 32px; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 0 8px; font: inherit; }
+
+/* ── ویژگی‌ها (کارت‌ها مثل html Fixed) ── */
+.attrGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
+.attrCard { border: 1px solid var(--line-soft); border-radius: var(--radius); background: var(--surface); padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.attrCardOff { opacity: .65; }
+.attrHead { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.attrName { font-weight: 800; font-size: 15px; color: var(--ink-900); }
+.attrHint { font-size: 12px; color: var(--ink-400); margin-top: 2px; }
+.attrMeta { font-size: 12.5px; color: var(--ink-600); display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.attrMeta b { color: var(--ink-800); font-weight: 600; }
+.attrCount { color: var(--brand); font-weight: 700; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; min-height: 28px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line-soft); font-size: 12.5px; color: var(--ink-800); }
+.chipMore { color: var(--ink-400); border-style: dashed; }
+.sw { width: 12px; height: 12px; border-radius: 50%; border: 1px solid rgba(0,0,0,.12); display: inline-block; }
+.swBig { width: 15px; height: 15px; border-radius: 50%; border: 1px solid rgba(0,0,0,.12); display: inline-block; vertical-align: middle; flex: none; }
+.attrFoot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 6px; padding-top: 6px; border-top: 1px dashed var(--line-soft); }
+.valuesEditor { display: flex; flex-direction: column; gap: 8px; max-height: 360px; overflow: auto; padding: 2px; }
+.valueRow { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; align-items: center; }
+.valueRow input[type="text"] { height: 38px; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 0 10px; font: inherit; width: 100%; }
+.valueRow input[type="color"] { width: 38px; height: 38px; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 2px; background: var(--surface); cursor: pointer; }
+.hexRow { display: inline-flex; align-items: center; gap: 6px; }
+.hexRow input[type="color"] { width: 42px; height: 42px; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 2px; background: var(--surface); cursor: pointer; }
+.pickGrid { display: flex; flex-wrap: wrap; gap: 8px; max-height: 300px; overflow: auto; padding: 2px; }
+.pick { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font: inherit; font-size: 13px; color: var(--ink-800); }
+.pick:hover { background: var(--surface-2); }
+.pickOn { border-color: var(--brand); background: var(--brand-tint); color: var(--brand); font-weight: 700; }
+.pick:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.setGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.setCard { border: 1px solid var(--line-soft); border-radius: var(--radius); background: var(--surface); padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.setHead { display: flex; justify-content: space-between; align-items: center; }
+.setName { font-weight: 800; color: var(--ink-900); }
+.tabsRow { margin-bottom: 14px; }
+.twoCol { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.toggles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 16px; }
+.soonNote { font-size: 12px; color: var(--ink-400); }
+.intro { margin: 0 0 14px; font-size: 13px; line-height: 1.9; color: var(--ink-500); }
+
+/* ── فرم ماتریس خانواده‌ی کالا ── */
+.attrFieldsGrid { display: grid; gap: 12px 14px; }
+.wizard { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: start; }
+.wizardSide { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 14px; }
+.sumRow { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed var(--line-soft); font-size: 13px; color: var(--ink-600); }
+.sumRow b { color: var(--ink-900); }
+.sampleName { padding: 10px 12px; border-radius: var(--radius-sm); background: var(--surface-2); font-size: 13px; line-height: 1.8; color: var(--ink-800); min-height: 56px; }
+.catPath { padding: 8px 12px; border-radius: var(--radius-sm); background: var(--surface-2); font-size: 12.5px; color: var(--ink-600); }
+.catPath b { color: var(--brand); }
+.dims { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.dimHead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-weight: 700; font-size: 13.5px; }
+.setPicks { display: inline-flex; gap: 4px; flex-wrap: wrap; }
+.setPick { font-size: 11.5px; padding: 2px 8px; border-radius: 999px; border: 1px dashed var(--line); background: transparent; color: var(--ink-500); cursor: pointer; font: inherit; }
+.setPick:hover { color: var(--brand); border-color: var(--brand); }
+.matrix { overflow: auto; }
+.matrix table { border-collapse: separate; border-spacing: 6px; }
+.matrix th { font-size: 12px; font-weight: 700; color: var(--ink-600); padding: 4px 6px; white-space: nowrap; }
+.cell { width: 150px; border: 1px solid var(--line-soft); border-radius: var(--radius-sm); padding: 8px; background: var(--surface); display: flex; flex-direction: column; gap: 6px; }
+.cellOff { opacity: .45; background: var(--surface-2); }
+.cellHead { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.cellName { font-size: 11px; color: var(--ink-500); line-height: 1.5; min-height: 32px; }
+.cell input { height: 30px; border: 1px solid var(--line); border-radius: 6px; padding: 0 6px; font: inherit; font-size: 12px; width: 100%; }
+.cellCode { font-size: 11.5px; color: var(--ink-400); }
+.cb { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid var(--line-strong); background: var(--surface); display: inline-grid; place-items: center; cursor: pointer; padding: 0; }
+.cbOn { background: var(--brand); border-color: var(--brand); color: #fff; }
+.nameParts { display: flex; flex-wrap: wrap; gap: 6px; }
+.draftRow { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px; border: 1px solid var(--line-soft); border-radius: var(--radius-sm); }
+.draftLabel { font-weight: 700; font-size: 13px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px; align-items: start; }
+.heroTitle { font-size: 18px; font-weight: 800; color: var(--ink-900); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.heroMeta { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 8px; font-size: 13px; color: var(--ink-600); }
+.heroMeta b { color: var(--ink-800); font-weight: 600; }
+.heroActs { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.gridCell { border: 1px solid var(--line-soft); border-radius: var(--radius-sm); padding: 8px; min-width: 140px; background: var(--surface); text-align: right; cursor: pointer; font: inherit; }
+.gridCell:hover { border-color: var(--line); background: var(--surface-2); }
+.gridCellEmpty { border-style: dashed; color: var(--ink-400); display: grid; place-items: center; min-height: 72px; }
+.gridCellOn { border-color: var(--brand); background: var(--brand-tint); }
+
+/* ── صفحه‌ی «کالاها» مطابق html: کارت خانواده‌ها + لیست کالاها ── */
+.famHead { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.famCount { font-size: 12.5px; color: var(--ink-400); margin-inline-start: 8px; font-weight: 500; }
+.famSearch { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 12px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); min-width: 240px; }
+.famSearch input { border: 0; outline: 0; font: inherit; width: 100%; background: transparent; }
+.famSearch:focus-within { box-shadow: var(--focus-ring); }
+.filterRow { display: grid; gap: 12px; align-items: end; margin: 12px 0 14px; }
+.dimsText { color: var(--brand); font-weight: 700; }
+.swRow { display: inline-flex; gap: 4px; align-items: center; min-height: 26px; vertical-align: middle; }
+.sku { color: var(--brand); font-weight: 700; font-size: 12px; }
+.sizeChip { display: inline-block; padding: 2px 8px; border-radius: 6px; background: var(--surface-2); border: 1px solid var(--line-soft); font-size: 12px; }
+.price { font-weight: 700; color: var(--ink-900); }
+.priceMuted { color: var(--ink-300); }
+.clearBtn { height: 42px; }
+.pickAdd { border-style: dashed; color: var(--brand); border-color: var(--blush-line); background: var(--blush-50); }
+.details { margin-top: 12px; border-top: 1px dashed var(--line-soft); padding-top: 8px; }
+.details > summary { cursor: pointer; font-size: 13px; font-weight: 600; color: var(--ink-600); }
+.detailsHead { font-size: 13px; font-weight: 600; color: var(--ink-600); }
+.draftRowOn { border-color: var(--blush-line); background: var(--blush-50); }
+.famName { display: inline-block; max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; }
+/* جدول‌های پرستون صفحه‌ی کالاها (مثل html): فاصله‌ی سلول کمتر تا بدون اسکرول افقی جا شوند */
+.compact table th, .compact table td { padding-inline: 8px; }
+
+/* ── آیتم‌ها (واحد فروش) — html V2 ── */
+.catTabs { margin: -6px 0 14px; }
+.itemsBar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.itemCell { display: flex; align-items: center; justify-content: flex-start; gap: 10px; padding: 8px 0; text-align: start; min-width: 0; }
+.thumb { width: 40px; height: 40px; border-radius: 10px; display: inline-grid; place-items: center; color: #fff; font-weight: 800; font-size: 16px; flex: none; }
+.itemText { display: flex; flex-direction: column; justify-content: center; gap: 3px; min-width: 0; line-height: 1.5; }
+.itemSub { font-size: 11.5px; color: var(--ink-400); }
+.expand { padding: 16px 18px; background: var(--surface-2); border-radius: 16px; }
+.expandGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 18px; }
+.kv { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--ink-400); min-width: 0; }
+.kv b { font-size: 13px; color: var(--ink-900); font-weight: 700; line-height: 1.7; overflow-wrap: anywhere; }
+.kvList { display: flex; flex-direction: column; }
+.kvList .kv { flex-direction: row; justify-content: space-between; align-items: baseline; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line-soft); }
+.kvList .kv b { text-align: end; }
+/* مراحل ویزارد */
+.steps { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; margin: 0 0 16px; }
+.stepWrap { display: inline-flex; align-items: center; gap: 4px; }
+.step { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 12px; border: 0; background: transparent; font: inherit; font-size: 13px; font-weight: 600; color: var(--ink-500); cursor: pointer; }
+.stepOn { background: var(--brand-tint); color: var(--brand); }
+.stepNum { width: 24px; height: 24px; border-radius: 50%; display: inline-grid; place-items: center; background: var(--surface-3); color: var(--ink-400); font-size: 12px; font-weight: 700; }
+.stepCur { background: var(--brand); color: #fff; }
+.stepDone { background: var(--success); color: #fff; }
+.stepSep { color: var(--ink-300); padding: 0 4px; }
+.wizFoot { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+/* جدول انتخاب خانواده/کالا */
+.goodsPick { border: 1px solid var(--line-soft); border-radius: var(--radius); overflow: auto; }
+.goodsPick table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.goodsPick th { background: var(--surface-2); color: var(--ink-600); font-weight: 600; font-size: 12px; padding: 10px 6px; text-align: start; white-space: nowrap; }
+.goodsPick td { padding: 8px 6px; border-top: 1px solid var(--line-soft); white-space: nowrap; text-align: start; }
+.goodOn td { background: var(--blush-50); }
+.clickRow { cursor: pointer; }
+.clickRow:hover td { background: var(--surface-2); }
+.radio { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--line-strong); display: inline-block; position: relative; flex: none; }
+.radioOn { border-color: var(--brand); background: radial-gradient(circle, var(--brand) 0 45%, transparent 50%); }
+.radioRow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.radioCard { display: flex; align-items: flex-start; gap: 10px; padding: 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); font: inherit; text-align: start; cursor: pointer; }
+.radioCard b { font-size: 13.5px; color: var(--ink-900); }
+.radioCardOn { border-color: var(--brand); background: var(--blush-50); }
+.radioCard:disabled { opacity: .55; cursor: not-allowed; }
+.unitBox { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 12px; padding: 10px 12px; border-radius: var(--radius-sm); background: var(--surface-2); font-size: 13px; }
+.unitSel { min-width: 240px; }
+.inheritGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.inheritGrid .kv { padding: 12px; border: 1px solid var(--line-soft); border-radius: var(--radius-sm); }
+.switchBox { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 14px; padding: 12px 14px; border: 1px solid var(--line-soft); border-radius: var(--radius); }
+.switchBox b { font-size: 13.5px; }
+.readBox { min-height: 42px; display: flex; align-items: center; padding: 0 12px; border-radius: var(--radius-sm); background: var(--surface-2); border: 1px solid var(--line-soft); font-weight: 700; }
+.warnText { margin: 10px 0 0; font-size: 12.5px; color: var(--warning); }
+.warnBox { margin-top: 12px; padding: 10px 12px; border-radius: var(--radius-sm); background: var(--warning-tint); color: var(--warning); font-size: 12.5px; }
+.homog { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: var(--radius-sm); background: var(--warning-tint); color: var(--warning); font-size: 12.5px; font-weight: 600; }
+.homog > span { width: 20px; height: 20px; border-radius: 6px; background: var(--surface); display: inline-grid; place-items: center; font-size: 11px; }
+.homogOk { background: var(--success-tint); color: var(--success); }
+.previewThumb { height: 150px; border-radius: var(--radius); display: grid; place-items: center; color: #fff; font-size: 56px; font-weight: 800; }
+/* گالری */
+.tier { padding: 12px 0; border-bottom: 1px solid var(--line-soft); }
+.tier:last-of-type { border-bottom: 0; }
+.tiles { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.tile { position: relative; width: 84px; aspect-ratio: 2 / 3; border-radius: 12px; background: var(--surface-2) center/cover no-repeat; border: 1px solid var(--line-soft); }
+.coverTag, .coverBtn { position: absolute; top: 6px; inset-inline-start: 6px; padding: 2px 8px; border-radius: 8px; font-size: 11px; font-weight: 700; border: 0; }
+.coverTag { background: var(--surface); color: var(--brand); }
+.coverBtn { background: rgba(0, 0, 0, .45); color: #fff; cursor: pointer; font: inherit; font-size: 10.5px; opacity: 0; }
+.tile:hover .coverBtn { opacity: 1; }
+.tileNum { position: absolute; bottom: 6px; inset-inline-start: 6px; min-width: 20px; height: 20px; border-radius: 6px; background: rgba(0, 0, 0, .45); color: #fff; font-size: 11px; display: grid; place-items: center; }
+.tileRm { position: absolute; top: 6px; inset-inline-end: 6px; width: 22px; height: 22px; border-radius: 50%; border: 0; background: var(--surface); color: var(--danger); display: grid; place-items: center; cursor: pointer; }
+.tileAdd { width: 84px; aspect-ratio: 2 / 3; border-radius: 12px; border: 1.5px dashed var(--line-strong); background: var(--surface); color: var(--ink-400); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font: inherit; font-size: 11.5px; cursor: pointer; }
+.chipX { border: 0; background: transparent; color: inherit; padding: 0; margin-inline-start: 4px; display: inline-grid; place-items: center; cursor: pointer; }
+.pickRow { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--surface); font: inherit; font-size: 13px; text-align: start; cursor: pointer; }
+/* پرونده آیتم */
+.detailTitle { display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.crumb { font-size: 14px; color: var(--ink-400); font-weight: 500; }
+.hero { display: flex; gap: 20px; align-items: stretch; }
+.heroThumb { width: 170px; min-height: 170px; border-radius: var(--radius); background: center/cover no-repeat; display: grid; place-items: center; color: #fff; font-size: 64px; font-weight: 800; flex: none; }
+.heroText { flex: 1; min-width: 0; }
+.heroName { margin: 4px 0 6px; font-size: 20px; color: var(--ink-900); }
+.heroDesc { margin: 0; font-size: 13px; line-height: 1.9; color: var(--ink-600); }
+.statRow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.stat { display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line-soft); }
+.stat b { font-size: 20px; color: var(--ink-900); }
+.stat > span { font-size: 12px; color: var(--ink-400); }
+.boxRow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.box { display: flex; flex-direction: column; gap: 6px; padding: 14px; border: 1px solid var(--line-soft); border-radius: var(--radius); font-size: 12px; color: var(--ink-400); }
+.box b { font-size: 14px; color: var(--ink-900); }
+.boxBrand { border-color: var(--blush-line); background: var(--blush-50); }
+.boxBrand b { color: var(--brand); }
+.dimTotals { display: flex; gap: 10px; margin-top: 14px; }
+.totChip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border: 1px solid var(--line-soft); border-radius: 10px; font-size: 12px; }
+.totChip b { color: var(--brand); }
+
+/* ── باندل‌ها — html V2 ── */
+.codeChip { display: inline-block; padding: 4px 10px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--line-soft); font-size: 12px; font-weight: 700; color: var(--ink-700); }
+.saveTag { font-size: 11.5px; color: var(--success); font-weight: 600; }
+.saveBox { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; padding: 10px 12px; border-radius: var(--radius-sm); background: var(--success-tint); color: var(--success); font-size: 13px; }
+.pickCard { display: flex; align-items: center; gap: 14px; padding: 10px 14px; border: 1px solid var(--line-soft); border-radius: var(--radius); background: var(--surface); }
+.pickStat { display: flex; flex-direction: column; gap: 2px; font-size: 11px; color: var(--ink-400); min-width: 64px; }
+.discBox { display: inline-flex; align-items: center; gap: 4px; }
+.discBox input { width: 56px; height: 34px; border: 1px solid var(--line); border-radius: 8px; padding: 0 8px; font: inherit; font-size: 13px; text-align: center; }
+.discType { height: 34px; min-width: 34px; padding: 0 8px; border-radius: 8px; border: 1px solid var(--blush-line); background: var(--blush-50); color: var(--brand); font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+
+/* ── قیمت‌گذاری ── */
+.priceIn { width: 110px; height: 34px; border: 1px solid var(--line); border-radius: 8px; padding: 0 8px; font: inherit; font-size: 13px; text-align: center; background: var(--surface); }
+.priceIn:focus { outline: none; border-color: var(--brand); box-shadow: var(--focus-ring); }
+.selBar { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; padding: 8px 12px; border-radius: var(--radius-sm); background: var(--blush-50); color: var(--brand); font-size: 13px; font-weight: 600; }
+.editBar { position: sticky; bottom: 12px; z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; padding: 12px 16px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--blush-line); box-shadow: var(--shadow-lg); font-size: 13.5px; }
+img.thumb { object-fit: cover; background: var(--surface-2); }
+.linkBtn { border: 0; background: none; padding: 0; color: var(--brand); font: inherit; font-weight: 700; cursor: pointer; text-decoration: underline; }
+
+/* اصلاحات کالاها (افشین 2026-10-23) */
+.famTools { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+/* افشین 2026-10-25: ابزارهای بالای جدول (جست‌وجو، انتخاب ستون‌ها، خروجی، حذف فیلترها) هم‌قد ۴۲px و هم‌راستا */
+.famTools button[aria-haspopup="dialog"] { height: 42px; }
+/* سواچ رنگ خانواده‌ها: ۷۰٪ سواچ بزرگ (۲۲ ⇐ ۱۵px)، ردیف هم‌قد نشان وضعیت (۲۶px) تا مرکز سواچ با نقطه‌ی وضعیت هم‌راستا باشد */
+.famSwRow { display: inline-flex; align-items: center; gap: 3px; height: 26px; vertical-align: middle; }
+.famSw { width: 15px; height: 15px; border-radius: 50%; border: 1px solid rgba(0,0,0,.12); flex: none; }
+.clearIcon { flex: none; width: 42px; height: 42px; border-radius: 13px; display: flex; align-items: center; justify-content: center; color: var(--ink-400); border: 1px dashed var(--line); background: transparent; cursor: pointer; }
+.clearIcon:hover:not(:disabled) { color: var(--brand); border-color: var(--blush-line); background: var(--blush-50); }
+.clearIcon:disabled { opacity: .45; cursor: not-allowed; }
+.rangeRow { display: flex; align-items: center; gap: 8px; }
+.rangeInput { flex: 1; min-width: 0; height: 42px; padding: 0 12px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--surface-2); font: inherit; font-size: 13px; }
+.rangeInput:disabled { cursor: not-allowed; color: var(--ink-300); }
+/* تعریف ماتریسی: سطر اول بازگشت + عنوان (راست‌چین)، سطر دوم دکمه‌ها */
+.wizActions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; flex-wrap: wrap; margin: -6px 0 18px; }
+
+/* اصلاحات افشین 2026-10-23 (۲) */
+/* ریال کوچک و کم‌رنگ کنار قیمت کارت‌های آیتم/کالا */
+.rial { font-size: 11px; font-weight: 500; color: var(--ink-400); margin-inline-start: 4px; }
+/* پنل بازشونده‌ی آیتم: کالاهای پک در کادر خیلی کم‌رنگ */
+.compBox { margin-top: 14px; padding: 10px 12px; border: 1px solid var(--line-soft); border-radius: 14px; background: rgba(255, 255, 255, .55); }
+.compBox table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.compBox th { font-size: 11.5px; font-weight: 600; color: var(--ink-400); text-align: center; padding: 4px 8px 8px; }
+.compBox td { text-align: center; padding: 7px 8px; border-top: 1px solid var(--line-soft); color: var(--ink-800); }
+.compBox td:first-child, .compBox th:first-child { text-align: start; }
+/* پرونده آیتم: جدول کالاهای تشکیل‌دهنده وسط‌چین */
+.centerTable th, .centerTable td { text-align: center; }
+.dimLine { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.dimTotals { flex-direction: column; align-items: stretch; }
+/* پرونده آیتم: سطر دوم دکمه‌ها چپ‌چین */
+.detailActions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; flex-wrap: wrap; margin: -6px 0 18px; }
+/* ۱۳) فیلد غیرقابل ویرایش در فرم ویرایش: خاموش و خاکستری کم‌رنگ */
+.radioCard:disabled { background: var(--surface-3); border-color: var(--line-soft); }
+.radioCard:disabled b { color: var(--ink-400); }
+.pick:disabled { background: var(--surface-3); color: var(--ink-400); cursor: not-allowed; }
+.cb:disabled { background: var(--surface-3); border-color: var(--line); cursor: not-allowed; }
+.cbOn:disabled { background: #d9a3a6; border-color: #d9a3a6; }
+.locked { background: var(--surface-3); color: var(--ink-400); }
+.addVal { display: inline-flex; align-items: center; gap: 6px; }
+.addVal input { height: 32px; width: 140px; padding: 0 10px; border-radius: 10px; border: 1px solid var(--line); font: inherit; font-size: 12.5px; }
+
+/* کادر کالاهای پک: سبک سلول جدول اصلی (DataTable) به آن ارث نرسد */
+.expand .compBox table td, .expand .compBox table th { height: auto; background: transparent; border: 0; border-radius: 0; box-shadow: none; padding: 7px 8px; white-space: nowrap; text-align: center; }
+.expand .compBox table td:first-child, .expand .compBox table th:first-child { text-align: start; }
+.expand .compBox table tbody td { border-top: 1px solid var(--line-soft); }
+/* جدول کالاهای آیتم (ساخت/ویرایش) بدون اسکرول افقی با قیمت‌های بزرگ */
+[data-goods] th, [data-goods] td { padding-inline: 4px; }
+
+/* ویرایش و جزئیات کالای تکی (افشین 2026-10-23) */
+.modalFootSplit { display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; flex-wrap: wrap; }
+.dangerOutline { color: var(--danger) !important; border-color: #f3dada !important; }
+.famStrip { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 16px; padding: 12px 14px; border: 1px solid var(--line-soft); border-radius: var(--radius); background: var(--surface-2); font-size: 13px; }
+.goodHeroSw { width: 170px; min-height: 170px; border-radius: var(--radius); display: grid; place-items: center; border: 1px solid var(--line-soft); background: var(--surface-2); flex: none; }
+.goodHeroSw span { width: 72px; height: 72px; border-radius: 50%; border: 1px solid rgba(0,0,0,.12); }
+
+/* جدول اقلام باندل در جزئیات بازشونده: هم‌شکل compBox آیتم، همه‌ی سلول‌ها وسط‌چین (افشین 2026-10-24) */
+.expand .compBox.compCenter table td:first-child, .expand .compBox.compCenter table th:first-child { text-align: center; }
+.goodsPick[data-lines] th, .goodsPick[data-lines] td { padding-inline: 4px; }
+.goodsPick[data-lines] [role=group] { gap: 4px; } .goodsPick[data-lines] [role=group] input { width: 40px; } .goodsPick[data-lines] [role=group] button { width: 28px; }
+.goodsPick[data-lines] th, .goodsPick[data-lines] td { text-align: center; }
+.compBox.compCenter td:first-child, .compBox.compCenter th:first-child { text-align: center; }
+.priceIn[data-edited] { border-color: var(--blush-line); background: var(--brand-tint-2); font-weight: 700; }
+
+/* افشین 2026-11-04: دکمه‌های «دسته‌بندی جدید» زیر سه کشوی دسته و «برند جدید» زیر کشوی برند (چهار ستون هم‌راستای FormGrid) */
+.quickAddRow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 18px; margin-top: 6px; }
+.quickAddRow > span:first-child { grid-column: span 3; }
+
+/* قانون نسبت ۲:۳ تصویر آیتم (افشین 2026-11-04): کاشی گالری و پیش‌نمایش ۲:۳، تصویر ناجور با کادر قرمز، مودال هشدار با قاب بدون برش */
+.tileBad { border: 2px solid var(--danger); }
+.badRatio { position: absolute; bottom: 6px; inset-inline-end: 6px; padding: 1px 6px; border-radius: 6px; background: var(--danger); color: #fff; font-size: 10px; font-weight: 700; }
+.ratioGrid { display: flex; flex-wrap: wrap; gap: 14px; }
+.ratioFig { margin: 0; width: 120px; display: flex; flex-direction: column; gap: 6px; }
+.ratioFrame { width: 120px; aspect-ratio: 2 / 3; border-radius: 10px; border: 2px dashed var(--danger); background: var(--surface-2); display: grid; place-items: center; overflow: hidden; }
+.ratioFrame img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.ratioFig figcaption { display: flex; flex-direction: column; gap: 2px; font-size: 12px; text-align: center; }
+.previewFrame { position: relative; width: 100%; max-width: 220px; margin: 0 auto; aspect-ratio: 2 / 3; border-radius: var(--radius); overflow: hidden; background: var(--surface-2); display: grid; place-items: center; }
+.previewFrame > img { width: 100%; height: 100%; object-fit: cover; }
+.previewLetter { color: #fff; font-size: 56px; font-weight: 800; }
+.previewNav { position: absolute; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .88); color: var(--ink-800); display: grid; place-items: center; cursor: pointer; box-shadow: 0 2px 6px rgba(0, 0, 0, .15); }
+.previewNav:hover { background: #fff; color: var(--brand); }
+.previewPrev { inset-inline-start: 8px; }
+.previewNext { inset-inline-end: 8px; }
+.previewCount { position: absolute; top: 8px; inset-inline-end: 8px; padding: 1px 8px; border-radius: 8px; background: rgba(0, 0, 0, .5); color: #fff; font-size: 11px; }
+.previewDots { position: absolute; bottom: 8px; inset-inline: 0; display: flex; justify-content: center; gap: 5px; }
+.previewDots button { width: 7px; height: 7px; padding: 0; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .6); cursor: pointer; }
+.previewDots .previewDotOn { background: #fff; width: 16px; border-radius: 4px; }

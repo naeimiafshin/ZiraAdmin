@@ -1,0 +1,403 @@
+/* ماژول مدیریت سفارشات — استانداردهای توکن و سیستم دیزاین */
+
+.muted {
+  color: var(--ink-400);
+}
+
+.strong {
+  font-weight: 700;
+  color: var(--ink-900);
+}
+
+.sub {
+  display: block;
+  font-size: 11.5px;
+  color: var(--ink-400);
+  margin-top: 2px;
+}
+
+.codeCell {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ink-400);
+}
+
+.rowActions {
+  display: inline-flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.iconBtn {
+  width: 30px;
+  height: 30px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ink-500);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.iconBtn:hover {
+  background: var(--surface-2);
+  color: var(--ink-900);
+  border-color: var(--line);
+}
+
+.iconBtn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.iconBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.iconDanger:hover {
+  background: var(--danger-tint);
+  color: var(--danger);
+  border-color: transparent;
+}
+
+/* تب‌ها و سربرگ */
+.tabsBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.tabGroup {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tabPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill, 9999px);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-600);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tabPill:hover {
+  background: var(--surface-2);
+  color: var(--ink-900);
+}
+
+.tabPillActive {
+  background: var(--brand-tint);
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.tabCount {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 10px;
+  background: var(--surface-3, rgba(0, 0, 0, 0.06));
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tabPillActive .tabCount {
+  background: var(--brand);
+  color: #fff;
+}
+
+.archiveSwitch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill, 9999px);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 12.5px;
+  color: var(--ink-600);
+  cursor: pointer;
+}
+
+.archiveSwitchActive {
+  background: var(--danger-tint);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* کارت هدر در مودال جزئیات */
+.detailHero {
+  padding: 20px 24px;
+  border-radius: var(--radius-lg);
+  background: radial-gradient(420px 160px at 100% 0%, var(--blush-100), transparent 70%), var(--surface);
+  border: 1px solid var(--line-soft);
+  margin-bottom: 20px;
+}
+
+.detailHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.detailTitleBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detailOrderNum {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink-900);
+}
+
+/* تایم‌لاین مراحل سفارش */
+.timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 24px 0 16px;
+  padding: 0 12px;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 14px;
+  left: 24px;
+  right: 24px;
+  height: 3px;
+  background: var(--line-soft);
+  z-index: 1;
+}
+
+.timelineProgress {
+  position: absolute;
+  top: 14px;
+  right: 24px;
+  height: 3px;
+  background: var(--brand);
+  z-index: 2;
+  transition: width 0.3s;
+}
+
+.timelineStep {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.stepDot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  color: var(--ink-400);
+}
+
+.stepDotDone {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+}
+
+.stepDotActive {
+  background: #fff;
+  border-color: var(--brand);
+  color: var(--brand);
+  box-shadow: 0 0 0 4px var(--brand-tint);
+}
+
+.stepLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-500);
+}
+
+.stepLabelActive {
+  color: var(--ink-900);
+  font-weight: 700;
+}
+
+.stepTime {
+  font-size: 11px;
+  color: var(--ink-400);
+}
+
+/* شبکه کارت‌های جزئیات */
+.detailGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 18px;
+  align-items: start;
+}
+
+.detailMain {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+.detailSide {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.kvGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+}
+
+.kvItem {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.kvItem label {
+  font-size: 11.5px;
+  color: var(--ink-400);
+}
+
+.kvItem span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-800);
+}
+
+/* مبالغ و جمع کل */
+.totalsCard {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.totalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--ink-600);
+}
+
+.totalGrand {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--brand);
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+}
+
+/* ویزارد ثبت سفارش */
+.wizardWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wizardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+}
+
+.wizardCard {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.custCard {
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.custCardSelected {
+  border-color: var(--brand);
+  background: var(--blush-50);
+}
+
+.settlePartsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.settlePartBox {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--surface);
+}
+
+.settlePartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* نوار اقدامات چسبان پایین ویزارد */
+.stickyBottomBar {
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}

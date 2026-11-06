@@ -1,0 +1,15 @@
+<!-- @dsCard group="Forms" height=290 -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Demo(){
+  return h(Z.Card,null, h(Z.FormGrid,{cols:4},
+    h(Z.Input,{label:'نام',required:true,defaultValue:'نگار'}), h(Z.Input,{label:'نام خانوادگی',required:true,defaultValue:'صادقی'}),
+    h(Z.Input,{label:'کد ملی',required:true,dir:'ltr',inputMode:'numeric',defaultValue:'۰۰۱۲۳۴۵۶۷۹'}), h(Z.Select,{label:'جنسیت',options:[{value:'F',label:'زن'},{value:'M',label:'مرد'}],defaultValue:'F'}),
+    h(Z.Textarea,{label:'توضیحات حساب',span:2,placeholder:'اختیاری'})));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

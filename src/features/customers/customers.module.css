@@ -1,0 +1,213 @@
+/* ماژول مدیریت مشتریان — فقط توکن‌های tokens.css؛ چیدمان مطابق html Fixed/Customer Management.html */
+.muted{color:var(--ink-400);font-size:12.5px}
+.strong{font-weight:700;color:var(--ink-900)}
+.code{color:var(--info);font-weight:700;font-size:13px}
+.intro{font-size:13px;color:var(--ink-500);line-height:1.9;margin-bottom:14px}
+.flags{display:inline-flex;gap:6px;align-items:center;flex-wrap:nowrap}
+.cb{width:16px;height:16px;accent-color:var(--brand);cursor:pointer}
+
+/* سطح همکاری: رنگ = نام سطح */
+.tier{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap;border:1px solid transparent}
+.tier::before{content:'';width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}
+.tierText{font-weight:700}
+.tierBronze{color:var(--tier-bronze)}
+.tierSilver{color:var(--tier-silver)}
+.tierGold{color:var(--tier-gold)}
+.tier.tierBronze{background:var(--tier-bronze-tint);border-color:var(--tier-bronze-line)}
+.tier.tierSilver{background:var(--tier-silver-tint);border-color:var(--tier-silver-line)}
+.tier.tierGold{background:var(--tier-gold-tint);border-color:var(--tier-gold-line)}
+
+/* سربرگ پرونده (hero) */
+.heroCard{padding:22px 24px;background:radial-gradient(460px 170px at 100% 0%,var(--blush-100),transparent 70%),var(--surface)}
+.hero{display:flex;align-items:center;gap:22px}
+.heroMain{flex:1;min-width:0}
+.heroName{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.heroName h2{font-size:20px;font-weight:700}
+.heroCode{font-size:13px;color:var(--ink-400);font-weight:600}
+.heroMeta{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:8px;font-size:12.5px;color:var(--ink-500)}
+.heroMeta b{color:var(--ink-900)}
+.heroStats{display:flex;gap:0}
+.heroStat{padding:0 22px;border-inline-start:1px solid var(--line-soft);text-align:center;min-width:110px}
+.heroStat:first-child{border-inline-start:none}
+.heroStatValue{font-size:19px;font-weight:700;color:var(--ink-900)}
+.heroStatLabel{font-size:11.5px;color:var(--ink-400);margin-top:2px}
+
+/* شبکه‌ها */
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:18px;align-items:start}
+.grid2eq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch}
+.stack{display:flex;flex-direction:column;gap:16px}
+.kvGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px}
+.kvGrid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 28px}
+.rowBetween{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.actionsRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.sub{font-size:12px;color:var(--ink-400)}
+.divider{height:1px;background:var(--line-soft);margin:18px 0}
+
+/* کارت‌های انتخاب وضعیت / سطح (رادیوهای بزرگ مثل html) */
+.choices{display:flex;flex-direction:column;gap:8px}
+.choice{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line-soft);border-radius:14px;cursor:pointer;text-align:right;transition:border-color .15s,background .15s;width:100%}
+.choice:hover{border-color:var(--blush-line);background:var(--surface-2)}
+.choiceOn,.choiceOn:hover{border-color:var(--brand);background:var(--brand-tint-2)}
+.choice:disabled{cursor:default}
+.choice:disabled:not(.choiceOn){opacity:.55}
+.choiceDot{width:18px;height:18px;border-radius:50%;border:2px solid var(--line-strong);display:inline-flex;align-items:center;justify-content:center;flex:none}
+.choiceOn .choiceDot{border-color:var(--brand)}
+.choiceOn .choiceDot::after{content:'';width:9px;height:9px;border-radius:50%;background:var(--brand)}
+.choiceText{display:flex;flex-direction:column;min-width:0;flex:1}
+.choiceTitle{font-size:13.5px;font-weight:700;color:var(--ink-900)}
+.choiceDesc{font-size:12px;color:var(--ink-400)}
+
+/* نوار سطح تصویر (۳ پله) */
+.levelBar{display:flex;gap:6px;margin:14px 0 6px}
+.levelSeg{flex:1;height:7px;border-radius:7px;background:var(--surface-3)}
+.levelSegOn{background:var(--brand-gradient)}
+.levelLabels{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-400)}
+.levelLabelOn{color:var(--brand);font-weight:700}
+
+/* کارت‌های اعتبار (چکی / طلایی) */
+.creditCard{border:1px solid var(--frame-line);border-radius:22px;background:var(--surface);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column}
+.creditHead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px}
+.creditHeadCheque{background:linear-gradient(180deg,#F1ECFA,var(--surface))}
+.creditHeadGolden{background:linear-gradient(180deg,#FBF1E2,var(--surface))}
+.creditTitle{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:var(--ink-900)}
+.creditIcon{width:38px;height:38px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:var(--surface);box-shadow:var(--shadow-sm)}
+.creditBody{padding:6px 22px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.creditRow{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;color:var(--ink-500)}
+.creditRow b{font-size:14px;color:var(--ink-900);font-variant-numeric:tabular-nums}
+.creditBig{font-size:20px!important;color:var(--brand)!important}
+.creditFoot{display:flex;flex-wrap:wrap;gap:8px;padding:14px 22px 18px;border-top:1px solid var(--line-soft);background:var(--surface-2)}
+.creditEmpty{padding:26px 22px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;flex:1;justify-content:center}
+
+/* مبلغ و میان‌برها */
+.amountWrap{display:flex;flex-direction:column;gap:8px}
+.shortcuts{display:flex;gap:8px;flex-wrap:wrap}
+.shortcut{height:32px;padding:0 12px;border-radius:10px;border:1px solid var(--line);font-size:12px;font-weight:600;color:var(--ink-600);background:var(--surface)}
+.shortcut:hover{border-color:var(--blush-line);color:var(--brand)}
+.shortcutOn,.shortcutOn:hover{border-color:var(--brand);background:var(--brand-tint);color:var(--brand)}
+
+/* به‌زودی */
+.soon{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border:1px dashed var(--line-strong);border-radius:18px;background:var(--surface-2);color:var(--ink-500)}
+.soonIcon{width:44px;height:44px;border-radius:14px;display:inline-flex;align-items:center;justify-content:center;background:var(--surface-3);color:var(--ink-400);flex:none}
+.soonTitle{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--ink-700);font-size:14px}
+.soonText{font-size:12.5px;margin-top:4px;line-height:1.8}
+
+/* فهرست ردیفی (مدارک، گروه‌ها، تاریخچه) */
+.list{display:flex;flex-direction:column;gap:8px}
+.listRow{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line-soft);border-radius:14px}
+.listRow>div{flex:1;min-width:0}
+.docDrop{position:relative;display:flex;align-items:center;gap:12px;padding:12px 14px;border:1.5px dashed var(--line-strong);border-radius:14px;cursor:pointer;transition:border-color .15s,background .15s}
+.docDrop:hover{border-color:var(--brand);background:var(--brand-tint-2)}
+.docDrop input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.docDropOk{border-style:solid;border-color:#bfe3cf;background:#f6fbf8}
+
+/* ویزارد (همان قالب ویزارد کاربران) */
+.steps{display:flex;gap:8px;padding:12px 14px;border-bottom:1px solid var(--line-soft);overflow-x:auto}
+.step{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:12px;font-size:13px;font-weight:600;color:var(--ink-500);white-space:nowrap}
+.step:hover{background:var(--surface-3)}
+.stepOn,.stepOn:hover{background:var(--brand-tint);color:var(--brand)}
+.num{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11.5px;background:#ededf0;color:var(--ink-500)}
+.stepOn .num{background:var(--brand);color:#fff}
+.stepDone .num{background:var(--success-tint);color:var(--success)}
+.body{padding:22px 24px 0}
+.foot{display:flex;align-items:center;gap:10px;margin:24px -24px 0;padding:16px 24px;border-top:1px solid var(--line-soft);background:var(--surface-2);border-radius:0 0 20px 20px}
+.counter{margin-inline-start:auto;font-size:12px;color:var(--ink-400)}
+.subhead{font-weight:700;font-size:14px;margin:22px 0 12px;color:var(--ink-900)}
+.summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 24px;padding:16px 18px;border:1px solid var(--line-soft);border-radius:16px;background:var(--surface-2)}
+.guarRow{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line-soft);border-radius:14px;background:var(--surface)}
+.fileBtn{display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);font-size:12px;font-weight:600;color:var(--ink-600);cursor:pointer;white-space:nowrap}
+.fileBtn:hover{border-color:var(--blush-line);color:var(--brand)}
+.remove{width:34px;height:34px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;color:var(--ink-400)}
+.remove:hover{background:var(--brand-tint);color:var(--brand)}
+.typeCards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+
+/* درخواست‌ها */
+.dateFilter{width:170px}
+.dateFilter label:empty{display:none}
+.tabsRow{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.counts{display:inline-flex;align-items:center;gap:6px}
+.countPill{min-width:22px;height:20px;padding:0 7px;border-radius:999px;background:var(--surface-3);font-size:11.5px;font-weight:700;color:var(--ink-500);display:inline-flex;align-items:center;justify-content:center}
+.reviewHead{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.reviewHead h2{font-size:20px;font-weight:700}
+.decision{display:flex;flex-direction:column;gap:10px}
+.notice{padding:14px 16px;border-radius:14px;background:var(--info-tint);color:#1f55a8;font-size:12.5px;line-height:1.9}
+.noteBox{padding:14px 16px;border-radius:14px;background:var(--surface-2);border:1px solid var(--line-soft)}
+
+/* گروه‌ها: کارت‌ها + پنل کناری (مطابق html) */
+.groupGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.groupCard{display:flex;flex-direction:column;gap:14px;padding:18px 20px;border:1px solid var(--frame-line);border-radius:20px;background:var(--surface);box-shadow:var(--shadow-card);transition:box-shadow .15s,transform .15s}
+.groupCard:hover{box-shadow:var(--shadow-card-hover)}
+.groupCardOff{opacity:.72}
+.groupHead{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.groupName{font-size:15px;font-weight:700;color:var(--ink-900)}
+.groupCode{font-size:12px;color:var(--ink-400);margin-top:3px}
+.groupStats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.groupStat{padding:12px;border-radius:14px;background:var(--surface-3);text-align:center}
+.groupStatValue{font-size:18px;font-weight:700;color:var(--ink-900)}
+.groupStatLabel{font-size:11.5px;color:var(--ink-400);margin-top:2px}
+.groupStatBrand{background:var(--brand-tint)}
+.groupStatBrand .groupStatValue{color:var(--brand)}
+.groupFoot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:12px;border-top:1px solid var(--line-soft)}
+.groupMarketer{font-size:12.5px;color:var(--ink-500)}
+.groupMarketer b{color:var(--ink-900)}
+.drawerOverlay{position:fixed;inset:0;z-index:80;background:rgba(42,30,34,.36);backdrop-filter:blur(3px);animation:fadeIn .15s ease}
+.drawer{position:fixed;top:0;bottom:0;left:0;width:620px;max-width:calc(100vw - 40px);z-index:81;background:var(--surface);box-shadow:var(--shadow-lg);display:flex;flex-direction:column;animation:drawerIn .2s ease}
+@keyframes drawerIn{from{transform:translateX(-24px);opacity:0}to{transform:translateX(0);opacity:1}}
+.drawerHead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;border-bottom:1px solid var(--line-soft)}
+.drawerHead h3{font-size:16px;font-weight:700}
+.drawerBody{padding:20px 22px;overflow:auto;flex:1;display:flex;flex-direction:column;gap:18px}
+.drawerFoot{display:flex;gap:10px;padding:14px 22px;border-top:1px solid var(--line-soft);background:var(--surface-2)}
+.x{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--ink-400)}
+.x:hover{background:var(--surface-3)}
+
+/* لیست مشتریان — ستون‌های اضافه‌شده از html Fixed (گروه‌ها، بازاریاب، درصد) */
+.groupChips{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap}
+.groupChip{font-size:11px;font-weight:600;color:var(--ink-600);background:var(--surface-3);border-radius:6px;padding:3px 8px;white-space:nowrap}
+.groupMore{font-size:11px;font-weight:700;color:var(--ink-300)}
+.mkCell{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;font-size:12.5px;font-weight:600;color:var(--ink-700)}
+.mkPct{font-weight:700;color:var(--purple)}
+
+/* کادر تخصیص بازاریاب: برچسب‌دار، هم‌قد (۴۲px)، دکمه هم‌تراز پایین فیلدها */
+.assignBox{margin-top:16px;padding:16px;border:1px solid var(--line-soft);border-radius:16px;background:var(--surface-2)}
+.assignHead{display:flex;flex-direction:column;gap:3px;margin-bottom:14px}
+.assignGrid{display:grid;grid-template-columns:minmax(0,1fr) 120px auto;gap:12px;align-items:end}
+
+.limit{font-weight:600;color:var(--success)}
+/* ردیف «انتخاب بازاریاب + درصد» در مودال‌ها (PickerField، RULES ۳-۵) */
+.pickRow{display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:12px;align-items:end}
+
+/* کارت آدرس‌های تحویل */
+.addrBar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.addrIcon{width:36px;height:36px;border-radius:11px;background:var(--brand-tint);color:var(--brand);display:flex;align-items:center;justify-content:center;flex:none;align-self:flex-start}
+.addrTitle{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-900)}
+.addrText{margin-top:5px;font-size:13px;color:var(--ink-700);line-height:1.9;white-space:normal}
+.addrMeta{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:6px;font-size:12px;color:var(--ink-400)}
+.addrMeta b{color:var(--ink-700);font-weight:600}
+.addrActions{display:flex;gap:6px;flex:none;align-self:flex-start}
+.addrInactive{background:var(--surface-2)}
+.addrInactive .addrIcon{background:var(--surface-3);color:var(--ink-300)}
+
+/* ویژگی‌های گروه (BR-CUS-041، 050) */
+.groupAttrs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-height:26px}
+.attrSummary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.attrSection{border:1px solid var(--line-soft);border-radius:14px;padding:12px 14px;background:var(--surface-2)}
+.attrSectionTitle{font-size:12px;font-weight:700;color:var(--ink-500);margin-bottom:8px}
+.attrRow{display:flex;justify-content:space-between;gap:10px;padding:5px 0;font-size:12.5px;color:var(--ink-700);border-bottom:1px dashed var(--line-soft)}
+.attrRow:last-child{border-bottom:none}
+.attrRow b{color:var(--ink-900);font-weight:700}
+.attrSummary>p{grid-column:1/-1;margin:0}
+.attrForm{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+.attrToggle{margin-top:16px;width:100%;height:42px;border:1px dashed var(--blush-line);border-radius:13px;background:var(--brand-tint-2);color:var(--brand);font-weight:700;font-size:13px}
+.attrToggle:hover{background:var(--brand-tint)}
+.srcTag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--ink-400);background:var(--surface-3);border-radius:6px;padding:2px 8px;white-space:nowrap}
+.srcTagGroup{color:var(--info);background:var(--info-tint)}
+.bankCell{display:inline-flex;align-items:center;gap:6px}
+.bankLogo{display:inline-block;flex:none;object-fit:contain}
+.bankMono{display:inline-grid;place-items:center;flex:none;border-radius:50%;background:var(--surface-3);color:var(--ink-500);font-weight:700}
+/* دو فیلد تاریخ هم‌عرض و هم‌تراز از بالا (متن راهنمای زیر یکی، دیگری را جابه‌جا نمی‌کند) */
+.dateRow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:start}
+.tierN{font-weight:500;opacity:.8;margin-inline-start:-3px}
+.danger{color:var(--danger)}
+.filterChip{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 6px 0 12px;border-radius:10px;background:var(--brand-tint-2);border:1px solid var(--blush-line);font-size:12.5px;color:var(--ink-700)}
+.filterChip button{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;color:var(--ink-400)}
+.filterChip button:hover{background:var(--surface-3);color:var(--ink-700)}
+.cellSub{display:block;font-size:11.5px;color:var(--ink-400);font-weight:500;margin-top:2px}

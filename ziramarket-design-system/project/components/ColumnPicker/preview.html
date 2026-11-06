@@ -1,0 +1,12 @@
+<!-- @dsCard group="Tables" height=260 -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Demo(){ const opts=[{key:'code',label:'کد پرسنلی',fixed:true},{key:'name',label:'نام و نام خانوادگی',fixed:true},{key:'mobile',label:'موبایل'},{key:'role',label:'نقش'},{key:'last',label:'آخرین ورود'},{key:'email',label:'ایمیل',soon:true}];
+  const [hid,setHid]=useState(['last']); const isV=(k)=>!hid.includes(k); const tog=(k)=>setHid((x)=>x.includes(k)?x.filter((y)=>y!==k):[...x,k]);
+  return h(Z.ColumnPicker,{options:opts,isVisible:isV,toggle:tog,reset:()=>setHid([]),visibleCount:opts.filter((o)=>isV(o.key)&&!o.soon).length}); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

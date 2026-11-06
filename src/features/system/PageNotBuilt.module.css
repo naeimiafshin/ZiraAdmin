@@ -1,0 +1,5 @@
+.box{max-width:560px;margin:60px auto 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;animation:fadeUp .3s ease}
+.icon{width:60px;height:60px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:var(--blush-100);color:var(--logo-wine);margin-bottom:6px}
+.title{font-size:18px;font-weight:700}
+.text{font-size:13.5px;color:var(--ink-500);line-height:1.9}
+.code{display:block;max-width:100%;padding:8px 12px;border-radius:10px;background:var(--surface-3);color:var(--ink-600);font-size:12px;margin-bottom:8px;word-break:break-word}

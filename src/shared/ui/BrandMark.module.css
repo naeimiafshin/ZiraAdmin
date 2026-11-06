@@ -1,0 +1,2 @@
+.img{display:block;flex:none}
+.tile{display:inline-flex;align-items:center;justify-content:center;flex:none;background:#fff;border:1px solid var(--blush-line);box-shadow:0 6px 18px rgba(109,47,50,.10)}

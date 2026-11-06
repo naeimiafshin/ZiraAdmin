@@ -1,0 +1,28 @@
+.code{color:var(--info);font-weight:700;font-size:12.5px;letter-spacing:.2px}
+.shield{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--brand-tint);color:var(--brand);flex:none}
+.desc{font-size:12.5px;color:var(--ink-500)}
+.matrixDomain{border:1px solid var(--line-soft);border-radius:16px;overflow:hidden;margin-bottom:12px}
+.domainHead{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--surface-2);font-weight:700;font-size:14px;cursor:pointer}
+.domainHead span{font-size:12px;font-weight:600;color:var(--ink-400)}
+.mRow{display:grid;grid-template-columns:minmax(200px,1.4fr) repeat(8,minmax(64px,1fr));align-items:center;gap:6px;padding:9px 16px;border-top:1px solid var(--line-soft);font-size:13px}
+.mHead{font-size:11.5px;color:var(--ink-400);font-weight:600;background:var(--surface)}
+.mName{display:flex;flex-direction:column;min-width:0}
+.cb{display:flex;justify-content:center}
+.cb input{width:17px;height:17px;accent-color:var(--brand);cursor:pointer}
+.cb input:disabled{cursor:not-allowed;opacity:.55}
+.inherited{accent-color:var(--info) !important}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--ink-400);margin-bottom:14px}
+.inline{display:flex;align-items:flex-end;gap:12px;margin-bottom:14px}
+.inlineField{flex:1;max-width:360px}
+/* «انتخاب همه» در ماتریس (2026-10-27) */
+.tri{width:16px;height:16px;accent-color:var(--brand);cursor:pointer;flex:none;margin:0}
+.tri:disabled{cursor:not-allowed;opacity:.5}
+.matrixTools{display:flex;align-items:center;gap:16px}
+.allLabel{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--ink-700);cursor:pointer;padding:6px 12px;border:1px solid var(--line-soft);border-radius:10px;background:var(--surface-2)}
+.domainHead .domainName{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--ink-900)}
+.rowName{display:inline-flex;align-items:center;gap:10px}
+/* تخصیص گروهی (2026-10-27) */
+.bulkBody{display:flex;flex-direction:column;gap:14px}
+.bulkBar{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:13px;color:var(--ink-600)}
+.bulkExpire{width:280px}
+.linkBtn{font:inherit;color:var(--brand);font-weight:600;padding:0;text-decoration:underline;text-underline-offset:3px}

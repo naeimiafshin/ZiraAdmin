@@ -1,0 +1,52 @@
+/* توکن‌های طراحی — برگرفته از html Fixed (User Management، Branch Management_V2).
+   رنگ و اندازه‌ی تازه فقط از این‌جا؛ مقدار hex خام در کامپوننت ممنوع. */
+:root{
+  /* فونت: خانواده‌ی ترکیبی Zira = متن Digi Hamishe + عدد IRANSans (fonts.css) */
+  --font-body:'Zira',Tahoma,system-ui,sans-serif;
+  --font-display:'Zira',Tahoma,system-ui,sans-serif;
+
+  --brand:#D74E54; --brand-strong:#b93d43; --brand-soft:#DF6F73;
+  --brand-tint:#FBEDED; --brand-tint-2:#FFF7F7;
+  --brand-gradient:linear-gradient(140deg,#E0666B 0%,#D74E54 50%,#C8444A 100%);
+
+  /* رنگ‌های لوگو (Main_logo.svg) و سطوح روشن هماهنگ با آن */
+  --logo-gradient:linear-gradient(135deg,#DA9999 0%,#D87F7D 20%,#C66A69 45%,#BE4849 65%,#904649 80%,#6D2F32 100%);
+  --logo-ink:#6D2F32; --logo-wine:#904649;
+  --blush-50:#FCF8F7; --blush-100:#F7EFEE; --blush-200:#EFE2E1; --blush-line:#EADBDA;
+
+  --ink-900:#23232d; --ink-800:#3a3a42; --ink-700:#484649; --ink-600:#5a5a64;
+  --ink-500:#6a6a73; --ink-400:#8a8a93; --ink-300:#9a9aa5; --ink-200:#a0a0a9;
+
+  --line-strong:#dcdce2; --line:#e6e6ea; --line-soft:#ececef;
+  --surface:#fff; --surface-2:#fcfafa; --surface-3:#f6f4f5; --canvas:#f5f2f3;
+  /* قاب‌ها (سایدبار و سربرگ، طرح «1») */
+  --panel-frame:#f3f1f2; --frame-line:#efe8e9;
+  --shadow-frame:0 1px 2px rgba(109,47,50,.04),0 12px 32px rgba(109,47,50,.06);
+  --shadow-card:0 1px 2px rgba(109,47,50,.04),0 6px 20px rgba(109,47,50,.045);
+  --shadow-card-hover:0 2px 4px rgba(109,47,50,.05),0 14px 32px rgba(109,47,50,.09);
+
+  --success:#1F8A5B; --success-tint:#E3F5EC;
+  /* بنفش html Fixed (اعتبار چکی، درصد بازاریاب) */
+  --purple:#8E6CB0; --purple-tint:#F1ECF7;
+  --info:#2A6FDB; --info-tint:#EAF1FB;
+  --warning:#B7791F; --warning-tint:#FDF3E2;
+  --danger:var(--brand); --danger-tint:var(--brand-tint);
+  /* سطح همکاری مشتری: رنگ هم‌نام خود سطح (برنزی، نقره‌ای، طلایی) */
+  --tier-bronze:#94582A; --tier-bronze-tint:#F5E9DF; --tier-bronze-line:#E6CDB7;
+  --tier-silver:#5F6873; --tier-silver-tint:#EDEFF2; --tier-silver-line:#D3D8DE;
+  --tier-gold:#8A6A00; --tier-gold-tint:#FBF2D3; --tier-gold-line:#EBD78F;
+
+  --radius-sm:9px; --radius:12px; --radius-lg:18px; --radius-xl:24px;
+  --shadow-sm:0 1px 2px rgba(20,20,40,.05);
+  --shadow:0 8px 24px rgba(20,20,40,.08);
+  --shadow-lg:0 24px 60px rgba(20,20,40,.12);
+  --shadow-brand:0 6px 16px rgba(215,78,84,.26);
+  --focus-ring:0 0 0 3px rgba(215,78,84,.18);
+
+  /* اسناد فروش (html Fixed «Sales Management»، ۱۴ آبان ۱۴۰۵): کهربایی تخفیف، فیلدهای فرم، برگه‌ی فاکتور */
+  --amber:#C8841A;
+  --field-bg:#F6F6F8; --field-ro:#F0F0F3; --field-line:#e3e3e3;
+  --row-line:#f4f4f4; --row-hover:#fcfbfc; --head-bg:#fafafa;
+  --paper-line:#E9E4E5; --paper-line-soft:#F1EDEE; --paper-tint:#FBF5F5; --paper-head:#F6F1F2; --paper-grid:#DCD4D5;
+  --overlay-dark:rgba(22,22,32,.6); --overlay:rgba(22,22,32,.46);
+}

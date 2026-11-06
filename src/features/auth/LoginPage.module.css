@@ -1,0 +1,51 @@
+.page{min-height:100%;min-width:1280px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);background:var(--canvas)}
+
+/* ── brand panel (left in RTL) — روشن تا لوگوی صورتی/زرشکی دیده شود ── */
+.brandPanel{order:2;position:relative;overflow:hidden;margin:16px;border-radius:var(--radius-xl);
+  background:linear-gradient(160deg,var(--blush-50) 0%,var(--blush-100) 55%,var(--blush-200) 100%);
+  border:1px solid var(--blush-line);color:var(--ink-900);display:flex;flex-direction:column;justify-content:space-between;padding:40px 44px}
+.pattern{position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(circle at 80% 12%,rgba(255,255,255,.9) 0,rgba(255,255,255,0) 42%),
+    linear-gradient(rgba(144,70,73,.055) 1px,transparent 1px) 0 0/44px 44px,
+    linear-gradient(90deg,rgba(144,70,73,.055) 1px,transparent 1px) 0 0/44px 44px;
+  mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.6) 65%,rgba(0,0,0,.2) 100%)}
+.watermark{position:absolute;width:min(560px,78%);left:-9%;bottom:-12%;opacity:.09;transform:rotate(-8deg);pointer-events:none;user-select:none}
+.brandTop{position:relative;display:flex;align-items:center;gap:18px}
+.brandCopy{position:relative;max-width:460px}
+.brandTitle{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,3vw,40px);line-height:1.45;color:var(--ink-900)}
+.accent{background:var(--logo-gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brandText{margin-top:16px;font-size:15px;line-height:1.95;color:var(--ink-600)}
+.brandFoot{position:relative;display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-500)}
+.brandFoot svg{color:var(--logo-wine)}
+
+/* ── form side ─────────────────────────────────────────────── */
+.formSide{order:1;display:flex;align-items:center;justify-content:center;padding:32px 24px}
+.formWrap{width:100%;max-width:420px;display:flex;flex-direction:column;gap:22px;animation:fadeUp .35s ease}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:34px 32px 26px;display:flex;flex-direction:column;gap:20px}
+.shake{animation:shake .4s ease}
+.header{display:flex;flex-direction:column;gap:6px}
+.title{font-weight:800;font-size:24px}
+.subtitle{font-size:13.5px;color:var(--ink-500)}
+.form{display:flex;flex-direction:column;gap:18px}
+.eye{display:flex;padding:6px;margin-inline-end:-6px;border-radius:8px;color:var(--ink-300);transition:color .15s,background .15s}
+.eye:hover{color:var(--ink-700);background:var(--surface-3)}
+.caps{color:var(--warning);font-weight:600}
+.submit{margin-top:4px}
+.help{font-size:12px;line-height:1.9;color:var(--ink-400);border-top:1px dashed var(--line);padding-top:16px}
+.footer{text-align:center;font-size:11.5px;color:var(--ink-300)}
+/* فعلاً فقط دسکتاپ (قانون افشین 2026-10-17)؛ واکنش‌گرایی بعداً. */
+
+/* مرحله‌ی دوم ورود: کد پیامکی و رمز منقضی (2026-10-25) */
+.phone{font-weight:700;color:var(--ink-800);unicode-bidi:isolate}
+.code input{letter-spacing:.35em;font-size:18px;font-weight:700;text-align:center}
+.timer{font-weight:700;color:var(--ink-700);font-variant-numeric:tabular-nums}
+.expired{color:var(--danger);font-weight:600}
+.stepActions{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:-6px}
+.stepNote{font-size:12.5px;color:var(--ink-500)}
+
+/* پیوند بازیابی رمز (2026-10-27) */
+.link{font:inherit;font-weight:700;color:var(--logo-wine);padding:0;border-radius:4px;text-decoration:underline;text-underline-offset:3px;text-decoration-color:color-mix(in oklch,var(--logo-wine) 35%,transparent)}
+.link:hover{text-decoration-color:currentColor}
+.link:focus-visible{outline:2px solid var(--logo-wine);outline-offset:2px}
+.lines{white-space:pre-line}

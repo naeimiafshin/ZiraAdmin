@@ -1,0 +1,231 @@
+/* ماژول خرید و تأمین — فقط توکن‌ها (الگو: users.module.css و catalog.module.css) */
+.muted{color:var(--ink-400)}
+.strong{font-weight:700;color:var(--ink-900)}
+.sub{display:block;font-size:11.5px;color:var(--ink-400);margin-top:2px}
+.formErr{margin-bottom:16px}
+.formNote{margin-top:18px}
+
+/* عملیات ردیف جدول */
+.rowActions{display:inline-flex;gap:4px;justify-content:center}
+.iconBtn{width:30px;height:30px;display:inline-grid;place-items:center;border-radius:var(--radius-sm);border:1px solid transparent;background:transparent;color:var(--ink-500);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.iconBtn:hover{background:var(--surface-2);color:var(--ink-900);border-color:var(--line)}
+.iconBtn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+.iconBtn:disabled{opacity:.4;cursor:not-allowed}
+.iconDanger:hover{background:var(--danger-tint);color:var(--danger);border-color:transparent}
+
+/* صفحه‌ی جزئیات (الگوی UserDetailPage) */
+.heroCard{padding:22px 24px;background:radial-gradient(420px 160px at 100% 0%,var(--blush-100),transparent 70%),var(--surface)}
+.hero{display:flex;align-items:center;gap:18px}
+.heroMark{width:64px;height:64px;flex:none;border-radius:18px;display:grid;place-items:center;background:var(--brand-tint);color:var(--brand)}
+.heroName{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.heroName h2{font-size:20px;font-weight:700;color:var(--ink-900)}
+.heroMeta{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:8px;font-size:12.5px;color:var(--ink-500)}
+.heroMeta b{color:var(--ink-900);font-weight:600}
+.tabs{margin-top:18px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:18px;align-items:start;margin-top:18px}
+.stack{display:flex;flex-direction:column;gap:18px;min-width:0}
+.kvGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 28px}
+.kvWide{grid-column:1/-1}
+.pre{white-space:pre-wrap;line-height:1.9}
+
+/* ستون کناری: عمل‌های تأمین‌کننده */
+.acts{display:flex;flex-direction:column}
+.act{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0;border-top:1px solid var(--line-soft)}
+.act:first-child{border-top:0;padding-top:0}
+.act b{display:block;font-size:13px;font-weight:700;color:var(--ink-900)}
+.act p{margin:3px 0 0;font-size:11.5px;line-height:1.7;color:var(--ink-500)}
+.act button{flex:none}
+.blockNote{margin-bottom:16px}
+
+/* شورای تأمین */
+.linkBtn{font:inherit;font-size:13px;color:var(--info);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.linkBtn:hover{color:var(--ink-900)}
+.linkBtn:focus-visible{outline:none;box-shadow:var(--focus-ring);border-radius:4px}
+.modalIntro{margin:0 0 14px;font-size:12.5px;color:var(--ink-500)}
+.titleChips{display:flex;flex-wrap:wrap;gap:8px}
+
+/* انتخاب‌گر کالا */
+.pickTabs{margin-bottom:14px}
+.pickFoot{display:flex;align-items:center;justify-content:flex-start;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line-soft)}
+.pickFoot>span{margin-inline-end:auto}
+.formErrTop{margin:12px 0 0}
+
+/* کشوی درخواست تأمین: سربرگ و جدول اقلام قابل ویرایش (html «ثبت درخواست تأمین») */
+.reqHead{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:18px;align-items:start;margin-bottom:22px}
+.requester{display:flex;flex-direction:column;gap:4px;padding:12px 16px;border-radius:var(--radius);background:var(--blush-50);border:1px solid var(--blush-line);font-size:12.5px}
+.requester b{font-size:14px;color:var(--ink-900)}
+.requester small{font-size:11.5px}
+.requesterDate{font-size:12.5px;color:var(--ink-500)}
+.requesterDate b{font-size:12.5px;font-weight:600;color:var(--ink-700)}
+.linesWrap{overflow-x:auto;border:1px solid var(--line-soft);border-radius:var(--radius-lg)}
+.lines{width:100%;border-collapse:collapse;font-size:12.5px}
+.lines th{background:var(--surface-2);color:var(--ink-500);font-weight:600;font-size:11.5px;padding:10px 8px;text-align:center;white-space:nowrap;border-bottom:1px solid var(--line-soft)}
+.lines th small{display:block;font-weight:500;font-size:10px;color:var(--ink-400)}
+.lines td{padding:8px;text-align:center;white-space:nowrap;border-bottom:1px solid var(--line-soft);color:var(--ink-800)}
+.lines tr:last-child td{border-bottom:0}
+.code{color:var(--ink-400);font-size:12px}
+.nameCell{display:flex;align-items:center;justify-content:center;gap:8px}
+.nameCell b{font-weight:600;color:var(--ink-900)}
+.cellInput{width:72px;height:32px;border:1px solid var(--line);border-radius:9px;padding:0 8px;text-align:center;font:inherit;font-size:12.5px;background:var(--surface);color:var(--ink-900)}
+.cellInput:focus{outline:none;border-color:var(--brand);box-shadow:var(--focus-ring)}
+.cellMoney{width:110px}
+.linesEmpty{padding:28px!important;color:var(--ink-400)}
+.fieldErr{margin:8px 0 0;font-size:11.5px;color:var(--brand)}
+.note{margin:8px 0 0;font-size:11.5px;color:var(--ink-400);line-height:1.8}
+.docsHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.docsHead b{font-size:13px;color:var(--ink-900)}
+.docRow{display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--line-soft)}
+.docRow .cellInput{width:260px;text-align:right}
+.docRow span{flex:1;font-size:12px}
+.footSum{margin-inline-start:auto;font-size:12.5px;color:var(--ink-500)}
+.footSum b{color:var(--ink-900)}
+
+/* جزئیات درخواست تأمین (html «درخواست تأمین تامین»، «مشاهده آرا»، «ثبت رای» و «ثبت وضعیت نهایی») */
+.detail{display:flex;flex-direction:column;gap:18px}
+.detailHead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.badges{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.stage{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-500)}
+.headActs{display:flex;gap:8px}
+.kvGrid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 18px;padding:16px;border:1px solid var(--line-soft);border-radius:var(--radius-lg);background:var(--surface-2)}
+.linesTotal{align-self:flex-end;font-size:13px;color:var(--ink-500)}
+.linesTotal b{font-size:15px;color:var(--ink-900);margin-inline:4px}
+.detailCols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+.detailCols1{display:flex;flex-direction:column;gap:18px}
+.docs{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.stat{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px;border:1px solid var(--line-soft);border-radius:var(--radius);background:var(--surface)}
+.stat b{font-size:18px;color:var(--ink-900)}
+.stat small{font-size:11.5px;color:var(--ink-400)}
+.stat .good{color:var(--success)}
+.stat .bad{color:var(--danger)}
+.voteList{display:flex;flex-direction:column;margin-top:10px}
+.voteRow{display:grid;grid-template-columns:minmax(0,1.2fr) auto minmax(0,1.6fr) auto auto;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line-soft);font-size:12.5px}
+.voteRow>div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.voteRow>div b{color:var(--ink-900);font-weight:600}
+.voteRow>div small{font-size:11px}
+.voteReason{color:var(--ink-800);overflow:hidden;text-overflow:ellipsis}
+.closedNote{margin:12px 0 0;padding:10px 14px;border-radius:var(--radius);background:var(--surface-2);color:var(--ink-500);font-size:12.5px}
+.myVote{display:flex;flex-direction:column;gap:12px;margin-top:14px;padding:14px 16px;border:1px solid var(--blush-line);border-radius:var(--radius-lg);background:var(--blush-50)}
+.myVoteHead{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px}
+.myVoteHead b{color:var(--ink-900)}
+.myVoteFoot{display:flex;align-items:center;gap:8px}
+.myVoteFoot>button:last-of-type{margin-inline-start:auto}
+.decision{display:flex;flex-direction:column;gap:10px;padding:14px 16px;border:1px solid var(--line-soft);border-radius:var(--radius-lg)}
+.decisionBtns{display:flex;gap:10px}
+
+/* فهرست درخواست‌های تأمین: کارت‌های شمارنده، سربرگ تب و نما، فیلترهای انتخابی */
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:0 0 16px}
+.kpi{display:flex;align-items:center;gap:14px;height:100%}
+.kpiIcon{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center}
+.kpiText{display:flex;flex-direction:column;gap:4px;min-width:0}
+.kpiText small{font-size:12px;color:var(--ink-400)}
+.kpiText b{font-size:18px;color:var(--ink-800)}
+.tBlue{background:var(--info-tint);color:var(--info)}
+.tRose{background:var(--brand-tint);color:var(--brand)}
+.tGreen{background:var(--success-tint);color:var(--success)}
+.tAmber{background:var(--warning-tint);color:var(--warning)}
+.listHead{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.tabCount{font-size:11.5px;color:var(--ink-400)}
+.nameStack{display:inline-flex;flex-direction:column;gap:2px}
+.nameStack b{font-weight:600;color:var(--ink-900)}
+.nameStack small{font-size:11px;color:var(--ink-400)}
+.pickChip{position:relative;display:inline-flex;flex:1 1 0;min-width:170px}
+.pickChipBtn{width:100%;height:42px;display:flex;align-items:center;gap:6px;padding:0 12px;border-radius:13px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font:inherit;font-size:13px;color:var(--ink-600);white-space:nowrap;transition:border-color .15s,background .15s}
+.pickChipBtn:hover{border-color:var(--blush-line)}
+.pickChipBtn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+.pickChipBtn svg{color:var(--ink-400);flex:none}
+.pickChipBtn b{color:var(--ink-900);overflow:hidden;text-overflow:ellipsis}
+.pickChipLabel{color:var(--ink-400);font-size:12px}
+.pickChipOn{border-color:var(--blush-line);background:var(--blush-50)}
+.pickChipOn b{color:var(--brand)}
+.pickChipClear{position:absolute;inset-inline-end:8px;top:50%;transform:translateY(-50%);display:flex;padding:4px;border:0;border-radius:7px;color:var(--ink-400);background:var(--surface);cursor:pointer}
+.pickChipClear:hover{color:var(--brand);background:var(--brand-tint)}
+
+/* شورای تأمین — رأی‌گیری (html: فهرست کارتی راست، جزئیات چپ) */
+.voteLayout{display:grid;grid-template-columns:360px minmax(0,1fr);gap:22px;align-items:start}
+.voteSide{display:flex;flex-direction:column;gap:12px;min-width:0}
+.voteMain{min-width:0;padding-inline-start:22px;border-inline-start:1px solid var(--line-soft);min-height:320px}
+.reqCards{display:flex;flex-direction:column;gap:8px}
+.reqCard{display:flex;flex-direction:column;gap:5px;padding:12px 14px;border:1px solid var(--line-soft);border-radius:var(--radius);background:var(--surface);text-align:start;font:inherit;cursor:pointer;transition:border-color .15s,background .15s}
+.reqCard:hover{border-color:var(--blush-line)}
+.reqCard:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+.reqCardOn{border-color:var(--brand);background:var(--blush-50)}
+.reqCardTop{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.reqCardTop b{font-size:13.5px;color:var(--ink-900)}
+.reqCardMeta{font-size:12px;color:var(--ink-500)}
+.lines td.bad{color:var(--danger);font-weight:600}
+
+/* فاکتور خرید: انبار هر ردیف، ابزار بالای اقلام، جمع‌ها و نشان فایل */
+.lineTools{display:inline-flex;align-items:center;gap:10px}
+.lineTools>*:first-child{min-width:230px}
+.whCell{min-width:180px}
+.fileCell{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
+.fileMark{display:inline-flex;color:var(--brand)}
+.invTotals{display:flex;align-items:center;justify-content:flex-end;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-500)}
+.invTotals b{color:var(--ink-900);margin-inline-start:4px}
+.invGrand{font-size:13.5px}
+.invGrand b{font-size:15px}
+
+/* خرید امانی: موعد عودت گذشته */
+.overdue{color:var(--danger);font-weight:600}
+
+/* مرور خرید: پنج کارت خلاصه */
+.kpis5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin:0 0 16px}
+.kpis5 .kpiText b{white-space:nowrap;font-size:16px}
+/* واحد فروش کالا (S-20): نشان عدد + مودال */
+.saleBadge{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;border:1px solid var(--blush-line);background:var(--blush-50);color:var(--brand-strong);font:inherit;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+.saleBadge:hover{background:var(--blush-100);border-color:var(--blush-200)}
+.saleBadge:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.saleList{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.saleList li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px;padding:10px 12px;border:1px solid var(--line-soft);border-radius:var(--radius);font-size:13px}
+.saleList li b{font-weight:600;color:var(--ink-900)}
+.saleList li small{flex-basis:100%;font-size:11.5px}
+.unpriced{display:inline-flex;align-items:center;height:22px;margin-inline-start:8px;padding:0 8px;border-radius:999px;background:var(--brand-tint);color:var(--brand-strong);font-size:11.5px;font-weight:600}
+.lateTag{display:inline-flex;align-items:center;height:20px;margin-inline-start:6px;padding:0 8px;border-radius:999px;background:var(--brand-tint);color:var(--brand-strong);font-size:11px;font-weight:600}
+.nowrap{white-space:nowrap;display:inline-flex;align-items:center}
+/* مودال‌های ستون‌های فهرست درخواست‌های تأمین (آرا، بیعانه، وضعیت مالی) */
+.kvList{display:flex;flex-direction:column;border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden}
+.kvRow{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;font-size:13px;border-bottom:1px solid var(--line-soft)}
+.kvRow:last-child{border-bottom:none}
+.kvRow span{color:var(--ink-500)}
+.kvRow b{font-weight:600;color:var(--ink-900)}
+.stepper{display:flex;gap:6px;flex-wrap:wrap}
+.stepBtn{height:30px;padding:0 12px;border-radius:999px;border:1px solid var(--line-soft);background:var(--surface-2);font:inherit;font-size:12px;color:var(--ink-500);cursor:pointer}
+.stepOn{background:var(--brand-tint);border-color:var(--blush-200);color:var(--brand-strong);font-weight:600}
+.depHero{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.depHero>div{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-radius:var(--radius);background:var(--blush-50);border:1px solid var(--blush-line)}
+.depHero small{font-size:12px;color:var(--ink-500)}
+.depHero b{font-size:18px;font-weight:700;color:var(--ink-900)}
+.cellBtn{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:999px;border:1px solid var(--line-soft);background:#fff;font:inherit;font-size:12px;color:var(--ink-700);cursor:pointer;white-space:nowrap}
+.cellBtn:hover{border-color:var(--blush-200);background:var(--blush-50)}
+.cellBtn:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+/* مودال «مرحله»: مسیر درخواست با تفکیک گذرانده، فعلی، باقی‌مانده و وضعیت پایانی */
+.lcSummary{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px}
+.lcSummary>span{display:inline-flex;align-items:center;gap:4px;height:28px;padding:0 12px;border-radius:999px}
+.lcSumDone{background:var(--success-tint);color:var(--success)}
+.lcSumCur{background:var(--brand-tint);color:var(--brand-strong);font-weight:600}
+.lcSumTodo{background:var(--surface-2);color:var(--ink-500)}
+.lc{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.lcStep{position:relative;display:flex;gap:14px;padding:0 0 18px}
+.lcStep:last-child{padding-bottom:0}
+.lcStep:not(:last-child)::before{content:'';position:absolute;inset-inline-start:13px;top:28px;bottom:2px;width:2px;background:var(--line-soft)}
+.lcDot{flex:none;width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;border:2px solid var(--line-soft);background:#fff;color:var(--ink-400);position:relative;z-index:1}
+.lcBody{display:flex;flex-direction:column;gap:2px;padding-top:4px;min-width:0}
+.lcBody b{font-size:13.5px;font-weight:600;color:var(--ink-500)}
+.lcBody small{font-size:11.5px;color:var(--ink-400)}
+.lc_done .lcDot{background:var(--success);border-color:var(--success);color:#fff}
+.lc_done:not(:last-child)::before{background:var(--success)}
+.lc_done .lcBody b{color:var(--ink-700)}
+.lc_current .lcDot{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:0 0 0 5px var(--brand-tint)}
+.lc_current .lcBody{padding:6px 12px;margin-top:-2px;border-radius:var(--radius);background:var(--brand-tint-2);border:1px solid var(--blush-200);flex:1}
+.lc_current .lcBody b{color:var(--ink-900);font-size:14px}
+.lc_current .lcBody small{color:var(--brand-strong);font-weight:600}
+.lc_todo .lcDot{border-style:dashed}
+.lc_todo .lcBody b{font-weight:500;color:var(--ink-400)}
+.lc_stopped .lcDot{background:var(--ink-700);border-color:var(--ink-700);color:#fff}
+.lc_stopped .lcBody{padding:6px 12px;margin-top:-2px;border-radius:var(--radius);background:var(--surface-2);border:1px solid var(--line-soft);flex:1}
+.lc_stopped .lcBody b{color:var(--ink-900)}
+@media (prefers-reduced-motion:no-preference){.lc_current .lcDot{transition:box-shadow .3s ease}}
+.stageBtn{display:inline-flex;align-items:center;gap:4px;padding:0;border:0;background:none;cursor:pointer;border-radius:999px}
+.stageBtn:hover>span:first-child{filter:brightness(.96)}
+.stageBtn:focus-visible{outline:2px solid var(--brand);outline-offset:2px}

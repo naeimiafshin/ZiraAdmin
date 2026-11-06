@@ -1,0 +1,210 @@
+{
+ "v": 3,
+ "layout": "files",
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-10-30T20:42:16Z"
+ },
+ "title": "پنل ادمین زیرا مارکت",
+ "namespace": "Zira",
+ "libraries": [
+  {
+   "name": "react",
+   "version": "18"
+  },
+  {
+   "name": "react-dom",
+   "version": "18"
+  }
+ ],
+ "sections": {},
+ "groups": [
+  "Logos",
+  "Screens",
+  "Backgrounds",
+  "Typography"
+ ],
+ "assetGroups": {
+  "Logos": {
+   "name": "Logos",
+   "tile": "m",
+   "order": [
+    "logo-lockup.svg",
+    "logo.svg"
+   ],
+   "files": {
+    "logo-lockup.svg": {
+     "name": "logo-lockup.svg",
+     "blob": "0a8a875eccbf3d02f7e38d05725186e4",
+     "size": 30363,
+     "type": "image/svg+xml"
+    },
+    "logo.svg": {
+     "name": "logo.svg",
+     "blob": "2f1b3fd5dc2402191b22237ff5f52385",
+     "size": 4583,
+     "type": "image/svg+xml"
+    }
+   }
+  },
+  "Screens": {
+   "name": "Screens",
+   "tile": "l",
+   "order": [
+    "01-login.webp",
+    "02-users-list.webp",
+    "03-user-detail.webp",
+    "04-user-wizard.webp",
+    "05-user-wizard-errors.webp",
+    "06-roles-list.webp",
+    "07-role-matrix.webp",
+    "08-bulk-assign-modal.webp",
+    "09-departments.webp",
+    "10-branch-access.webp",
+    "11-notifications.webp",
+    "12-sessions.webp",
+    "13-access-log.webp",
+    "14-chat.webp",
+    "15-profile.webp",
+    "16-security-policy.webp",
+    "17-megamenu.webp"
+   ],
+   "files": {
+    "01-login.webp": {
+     "name": "01-login.webp",
+     "blob": "32bc0d07c04389ca0a28031d808c384a",
+     "size": 30840,
+     "type": "image/webp"
+    },
+    "02-users-list.webp": {
+     "name": "02-users-list.webp",
+     "blob": "f28a9c6659f6ab3553f658dfb31555fd",
+     "size": 54898,
+     "type": "image/webp"
+    },
+    "03-user-detail.webp": {
+     "name": "03-user-detail.webp",
+     "blob": "bd582e7c6836c9528f82f519c9955a44",
+     "size": 40414,
+     "type": "image/webp"
+    },
+    "04-user-wizard.webp": {
+     "name": "04-user-wizard.webp",
+     "blob": "ce29150425bfd7ab59ef79b294ff07db",
+     "size": 39008,
+     "type": "image/webp"
+    },
+    "05-user-wizard-errors.webp": {
+     "name": "05-user-wizard-errors.webp",
+     "blob": "f7460b9c4536b8ac126dfcd563f616ef",
+     "size": 49518,
+     "type": "image/webp"
+    },
+    "06-roles-list.webp": {
+     "name": "06-roles-list.webp",
+     "blob": "4b42879bcfac7e90e5c30732d1127a27",
+     "size": 58052,
+     "type": "image/webp"
+    },
+    "07-role-matrix.webp": {
+     "name": "07-role-matrix.webp",
+     "blob": "42cf4930aed7b1fc36bfdcbb549814b1",
+     "size": 43476,
+     "type": "image/webp"
+    },
+    "08-bulk-assign-modal.webp": {
+     "name": "08-bulk-assign-modal.webp",
+     "blob": "2f2cb350e7bdd33d6cf69cfc2eff19a5",
+     "size": 29314,
+     "type": "image/webp"
+    },
+    "09-departments.webp": {
+     "name": "09-departments.webp",
+     "blob": "24730487e649ce078ef4039bea225993",
+     "size": 55820,
+     "type": "image/webp"
+    },
+    "10-branch-access.webp": {
+     "name": "10-branch-access.webp",
+     "blob": "fa2ee5e22478c9d5da843d67234322b1",
+     "size": 63896,
+     "type": "image/webp"
+    },
+    "11-notifications.webp": {
+     "name": "11-notifications.webp",
+     "blob": "70fbd8cfa7e24122f5628b72225c311f",
+     "size": 41790,
+     "type": "image/webp"
+    },
+    "12-sessions.webp": {
+     "name": "12-sessions.webp",
+     "blob": "c897bde88b8128b5b50687df672c2b8d",
+     "size": 69570,
+     "type": "image/webp"
+    },
+    "13-access-log.webp": {
+     "name": "13-access-log.webp",
+     "blob": "b1296eae1a809aeffe09b12c98e7fe67",
+     "size": 56654,
+     "type": "image/webp"
+    },
+    "14-chat.webp": {
+     "name": "14-chat.webp",
+     "blob": "25c1c098db3caaa5b73f12c6f57a6ff7",
+     "size": 32166,
+     "type": "image/webp"
+    },
+    "15-profile.webp": {
+     "name": "15-profile.webp",
+     "blob": "1c606698b9c6b12bff71718a7a810f37",
+     "size": 31770,
+     "type": "image/webp"
+    },
+    "16-security-policy.webp": {
+     "name": "16-security-policy.webp",
+     "blob": "2d010cf8686d53c6c1b5801f338cbd4d",
+     "size": 59500,
+     "type": "image/webp"
+    },
+    "17-megamenu.webp": {
+     "name": "17-megamenu.webp",
+     "blob": "219c3ca13d551b997f33438cbd6f571d",
+     "size": 47632,
+     "type": "image/webp"
+    }
+   }
+  },
+  "Backgrounds": {
+   "name": "Backgrounds",
+   "tile": "l",
+   "order": [
+    "forest-blur.webp"
+   ],
+   "files": {
+    "forest-blur.webp": {
+     "name": "forest-blur.webp",
+     "blob": "6b954d9371f3578a657d8206a9c69c0c",
+     "size": 12658,
+     "type": "image/webp"
+    }
+   }
+  },
+  "Typography": {
+   "name": "Typography",
+   "tile": "s",
+   "order": [],
+   "files": {}
+  }
+ },
+ "blobs": {},
+ "docs": {
+  "readme": "project/README.md",
+  "sections": []
+ },
+ "lastChange": {
+  "by": "Afshin",
+  "at": "2026-10-30T20:42:16Z",
+  "via": "Claude · ZiraAdmin@75486b4",
+  "note": "سیستم دیزاین از ماژول مدیریت کاربران: توکن‌ها، ۴۳ کامپوننت زنده از کد واقعی، الگوها، قانون‌ها و ۱۷ اسکرین‌شات"
+ }
+}

@@ -1,0 +1,46 @@
+.bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.search{flex:2 1 0;min-width:240px;height:42px;display:flex;align-items:center;gap:8px;padding:0 14px;border-radius:13px;background:var(--surface-3);color:var(--ink-300);border:1px solid transparent;transition:border-color .15s,background .15s}
+.search:focus-within{border-color:var(--brand);background:var(--surface);color:var(--brand)}
+.search input{flex:1;border:none;outline:none;background:transparent;font-size:13.5px;color:var(--ink-900);min-width:0}
+.search input:focus-visible{box-shadow:none}
+.dd{position:relative;flex:1 1 0;min-width:150px}
+.filter{position:relative;width:100%;height:42px;display:flex;align-items:center;gap:6px;padding:0 12px;padding-inline-end:32px;border-radius:13px;border:1px solid var(--line);background:var(--surface);cursor:pointer;text-align:start;transition:border-color .15s,background .15s,box-shadow .15s}
+.filter:hover{border-color:var(--blush-line)}
+.open{border-color:var(--brand);box-shadow:var(--focus-ring)}
+.on{border-color:var(--blush-line);background:var(--blush-50)}
+.label{font-size:12px;color:var(--ink-400);white-space:nowrap}
+.value{font-size:13px;font-weight:700;color:var(--ink-900);white-space:nowrap}
+.on .value{color:var(--brand)}
+.chev{position:absolute;inset-inline-end:11px;top:50%;margin-top:-7.5px;color:var(--ink-300);transition:transform .2s}
+.open .chev{transform:rotate(180deg);color:var(--brand)}
+.menu{position:absolute;top:calc(100% + 6px);inset-inline:0;z-index:40;list-style:none;margin:0;padding:6px;background:var(--surface);border:1px solid var(--line-soft);border-radius:16px;box-shadow:0 14px 34px rgba(109,47,50,.12);max-height:320px;overflow-y:auto;animation:fadeUp .14s ease}
+.menu li+li{border-top:1px solid var(--line-soft)}
+.item{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;border-radius:10px;font-size:13px;font-weight:600;color:var(--ink-700);text-align:start;white-space:normal}
+.item:hover{background:var(--surface-3)}
+.itemOn,.itemOn:hover{color:var(--brand);background:var(--brand-tint)}
+.stack{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.searchRow{display:flex;align-items:center;gap:10px}
+.searchWide{flex:1 1 auto;height:46px}
+.countInline{font-size:12.5px;color:var(--ink-400);white-space:nowrap}
+.filterGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.filterGrid .dd{min-width:0}
+.reset{flex:none;width:42px;height:42px;border-radius:13px;display:flex;align-items:center;justify-content:center;color:var(--ink-400);border:1px dashed var(--line)}
+.reset:hover:not(:disabled){color:var(--brand);border-color:var(--blush-line);background:var(--blush-50)}
+.reset:disabled{opacity:.45;cursor:not-allowed}
+.filter:disabled{background:var(--surface-3);border-color:var(--line-soft);cursor:not-allowed}
+.filter:disabled .value{color:var(--ink-300);font-weight:500}
+.count{margin-inline-start:auto;font-size:12.5px;color:var(--ink-400);white-space:nowrap}
+
+/* فیلتر بازه (بازه قیمت) */
+/* بازه: دو فیلد زیر هم (از / تا) تا در ستون‌های باریک هم اسکرول افقی لازم نشود */
+.rangePop{min-width:0;padding:12px;max-height:none;overflow:visible;box-sizing:border-box}
+.rangeRow{display:flex;flex-direction:column;gap:10px}
+.rangeRow label{display:flex;flex-direction:column;gap:6px;font-size:11.5px;color:var(--ink-400);font-weight:600}
+.rangeRow input{width:100%;box-sizing:border-box;height:38px;padding:0 10px;border-radius:11px;border:1px solid var(--line);font:inherit;font-size:13px;color:var(--ink-900);outline:none;min-width:0}
+.rangeRow input:focus{border-color:var(--brand);box-shadow:var(--focus-ring)}
+.rangeActs{display:flex;justify-content:space-between;gap:8px;margin-top:12px;flex-wrap:wrap}
+.rangeClear{height:34px;padding:0 12px;border-radius:10px;font-size:12.5px;font-weight:600;color:var(--ink-500);border:1px solid var(--line);background:var(--surface)}
+.rangeApply{height:34px;padding:0 16px;border-radius:10px;font-size:12.5px;font-weight:700;color:#fff;background:var(--brand)}
+.itemSoon{color:var(--ink-300);cursor:not-allowed}
+.itemSoon:hover{background:transparent}
+.soonTag{font-size:10.5px;font-weight:600;color:var(--ink-300)}

@@ -1,0 +1,9 @@
+.form{display:flex;flex-direction:column;gap:14px}
+.text{font-size:13px;line-height:2;color:var(--ink-700)}
+/* پروفایل من (2026-10-27) */
+.tabs{margin-top:18px}
+.body{margin-top:16px}
+.chips{display:inline-flex;flex-wrap:wrap;gap:6px}
+.actions{display:flex;flex-direction:column}
+.actionRow{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 0;border-top:1px solid var(--line-soft)}
+.actionRow:first-child{border-top:0;padding-top:0}

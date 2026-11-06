@@ -1,0 +1,15 @@
+<!-- @dsCard group="Tables" height=200 -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Demo(){ const [q,setQ]=useState(''),[r,setR]=useState(''),[s,setS]=useState('ACTIVE'),[n,setN]=useState('');
+  return h(Z.TableFilters,{search:q,onSearch:setQ,placeholder:'جست‌وجو: نام، نام کاربری، موبایل یا کد پرسنلی',count:'۷ کاربر',filters:[
+    {key:'role',label:'نقش',value:r,onChange:setR,options:[{value:'a',label:'کارشناس کاتالوگ'},{value:'__none',label:'بدون نقش'}]},
+    {key:'status',label:'وضعیت',value:s,onChange:setS,options:[{value:'ACTIVE',label:'فعال'},{value:'SUSPENDED',label:'غیرفعال'},{value:'BLOCKED',label:'قفل'}]},
+    {key:'sess',label:'نشست فعال',value:n,onChange:setN,options:[{value:'yes',label:'دارد'},{value:'no',label:'ندارد'}]},
+    {key:'dev',label:'نوع دستگاه',value:'',onChange:()=>{},soon:true,options:[]}]}); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

@@ -1,0 +1,14 @@
+<!-- @dsCard group="Patterns" height=470 page -->
+<div id="root" dir="rtl" lang="fa" class="zm-prev"></div>
+<style>.zm-prev{padding:20px;background:var(--canvas);min-height:100%;box-sizing:border-box}.zm-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.zm-col{display:flex;flex-direction:column;gap:14px}.zm-cap{font-size:11.5px;color:var(--ink-500);margin:0 0 6px}</style>
+<script>
+const h = React.createElement, Z = window.Zira, F = React.Fragment;
+const { useState } = React;
+function Step(n,label,state){ const on=state==='on',done=state==='done'; return h('div',{style:{display:'flex',alignItems:'center',gap:8,fontSize:13,fontWeight:on?700:600,color:on?'var(--brand)':done?'var(--success)':'var(--ink-400)'}},
+  h('span',{style:{width:22,height:22,borderRadius:'50%',display:'inline-grid',placeItems:'center',fontSize:12,color:'#fff',background:on?'var(--brand)':done?'var(--success)':'var(--line-strong)'}},done?'✓':Z.faNum(n)),label); }
+function Demo(){ return h(Z.Card,{pad:false}, h('div',{role:'tablist',style:{display:'flex',gap:22,padding:'16px 24px',borderBottom:'1px solid var(--line-soft)',flexWrap:'wrap'}}, Step(1,'اطلاعات هویتی','done'),Step(2,'آدرس و تماس','on'),Step(3,'اطلاعات بانکی'),Step(4,'اطلاعات شغلی'),Step(5,'مدارک'),Step(6,'امنیت و نقش')),
+  h('div',{style:{padding:'22px 24px'}}, h(Z.FormGrid,{cols:4}, h(Z.Select,{label:'استان',required:true,options:[{value:'t',label:'تهران'}],defaultValue:'t'}),h(Z.Select,{label:'شهر',required:true,placeholder:'انتخاب شهر',options:[],defaultValue:''}),h(Z.Input,{label:'موبایل شخصی ۱',required:true,dir:'ltr',defaultValue:'۰۹۱۲۳۴۵',error:'شماره موبایل باید ۱۱ رقم باشد (الان ۷ رقم است).'}),h(Z.Input,{label:'کد پستی',dir:'ltr'}))),
+  h('div',{style:{display:'flex',alignItems:'center',gap:12,padding:'14px 24px',background:'var(--surface-2)',borderTop:'1px solid var(--line-soft)'}}, h(Z.Button,null,'مرحله بعد: اطلاعات بانکی'),h(Z.Button,{variant:'secondary'},'مرحله قبل'),h(Z.Button,{variant:'ghost'},'انصراف'),h('span',{style:{marginInlineStart:'auto',fontSize:12.5,color:'var(--ink-400)'}},'مرحله ۲ از ۶'))); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+Z.startPersianDigits(document.body);
+</script>

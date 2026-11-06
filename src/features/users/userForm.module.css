@@ -1,0 +1,26 @@
+.steps{display:flex;gap:8px;padding:12px 14px;border-bottom:1px solid var(--line-soft);overflow-x:auto}
+.step{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:12px;font-size:13px;font-weight:600;color:var(--ink-500);white-space:nowrap}
+.step:hover{background:var(--surface-3)}
+.stepOn,.stepOn:hover{background:var(--brand-tint);color:var(--brand)}
+.num{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11.5px;background:#ededf0;color:var(--ink-500)}
+.stepOn .num{background:var(--brand);color:#fff}
+.stepDone .num{background:var(--success-tint);color:var(--success)}
+.body{padding:22px 24px 0}
+.foot{display:flex;align-items:center;gap:10px;margin:24px -24px 0;padding:16px 24px;border-top:1px solid var(--line-soft);background:var(--surface-2);border-radius:0 0 20px 20px}
+.counter{margin-inline-start:auto;font-size:12px;color:var(--ink-400)}
+.subhead{display:flex;align-items:center;justify-content:space-between;margin:24px 0 12px;font-weight:700;font-size:14px}
+.kinRow{display:flex;gap:10px;align-items:flex-start;padding:14px;border:1px solid var(--line-soft);border-radius:14px;margin-bottom:10px}
+.kinRow>div{flex:1}
+.remove{width:36px;height:36px;margin-top:26px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--ink-400)}
+.remove:hover{background:var(--brand-tint);color:var(--brand)}
+.docs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.doc{position:relative;display:flex;align-items:center;gap:12px;padding:14px;border:1.5px dashed var(--line-strong);border-radius:14px;cursor:pointer;transition:border-color .15s,background .15s}
+.doc:hover{border-color:var(--brand);background:var(--brand-tint-2)}
+.doc input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.docOk{border-style:solid;border-color:#bfe3cf;background:#f6fbf8}
+.docIcon{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:var(--surface-3);color:var(--ink-400);flex:none}
+.docOk .docIcon{background:var(--success-tint);color:var(--success)}
+.docText{display:flex;flex-direction:column;min-width:0}
+.docName{font-size:13px;font-weight:700;color:var(--ink-900)}
+.docFile{font-size:11.5px;color:var(--ink-400);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.req{color:var(--brand)}

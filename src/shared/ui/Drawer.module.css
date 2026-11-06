@@ -1,0 +1,13 @@
+/* کشوی فرم از سمت چپ (افشین 2026-10-31) — فقط توکن‌ها */
+/* هم‌سطح مودال (۹۰): لایه‌ای که دیرتر باز شده (دیرتر به body اضافه شده) رو قرار می‌گیرد؛ کشوی ویرایش از مودال جزئیات و مودال انتخاب از کشو هر دو درست دیده می‌شوند (2026-10-31) */
+.overlay{position:fixed;inset:0;z-index:90;background:rgba(42,30,34,.36);backdrop-filter:blur(2px);direction:rtl;animation:fadeIn .15s ease}
+.drawer{position:absolute;top:0;left:0;height:100%;max-width:96vw;display:flex;flex-direction:column;background:var(--surface);box-shadow:var(--shadow-lg);border-radius:0 24px 24px 0;outline:none;animation:drawerIn .22s ease}
+@keyframes drawerIn{from{transform:translateX(-28px);opacity:0}to{transform:none;opacity:1}}
+.head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:20px 24px 16px;border-bottom:1px solid var(--line-soft)}
+.head h3{margin:0;font-size:16px;font-weight:700;color:var(--ink-900)}
+.head p{margin:4px 0 0;font-size:12px;line-height:1.7;color:var(--ink-500)}
+.x{width:32px;height:32px;flex:none;border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--ink-400);background:var(--surface-3)}
+.x:hover{color:var(--ink-700)}
+.body{flex:1;overflow-y:auto;padding:20px 24px}
+.foot{display:flex;align-items:center;gap:10px;padding:14px 24px;border-top:1px solid var(--line-soft);background:var(--surface-2);border-radius:0 0 24px 0}
+@media (prefers-reduced-motion:reduce){.overlay,.drawer{animation:none}}
